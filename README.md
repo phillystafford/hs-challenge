@@ -4,10 +4,10 @@
 Fork this project to your GitHub account and commit any changes there. To run this project locally, you will need to install [Node.js](https://nodejs.org/en/download/). Then run `npm install` and issue the `gulp` command from your command line.
 
 ## Mockup
-<img src="//cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_1.png" alt="Mockup" width="600" />
+<img src="http://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_1.png" alt="Mockup" width="600" />
 
 #### Mockup (Filter Dropdowns)
-<img src="//cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_2.png" alt="Mockup_Hover" width="600" />
+<img src="http://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_2.png" alt="Mockup_Hover" width="600" />
 
 ## Requirements
 1. Without adding or removing HTML elements, style each of the following modules to match the above mockup. Fonts have been provided for you and can be found in the accompanying `/src/views/partials/_fonts.ejs` file.
