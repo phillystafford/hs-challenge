@@ -1,7 +1,11 @@
 # HubSpot Web Team Exercise - Instructions
 
 ## Setup
-Fork this project to your GitHub account and commit any changes there. To run this project locally, you will need to install [Node.js](https://nodejs.org/en/download/). Then run `npm install` and issue the `gulp` command from your command line.
+1. Fork this project to your GitHub account and commit any changes there.
+2. Install [Node.js](https://nodejs.org/en/download/) and then run `npm install` on your project. We've included recommended packages in `package.json` for you to use, but feel free to add or remove any packages.
+3. Set up `gulpfile.js` to compile to a `/build` directory and run your site locally. We've included recommended tasks in `gulpfile.js` for you to use, but feel free to add or remove anything.
+
+If everything is set up properly, anyone should be able to fork your project, run `npm install`, and issue the `gulp` command from the command line to view your site from `localhost`.
 
 ## Mockup
 <img src="http://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_1.png" alt="Mockup" width="600" />
