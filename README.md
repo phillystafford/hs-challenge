@@ -7,7 +7,7 @@
 
 If everything is set up properly, anyone should be able to fork your project, run `npm install`, and issue a start command (we recommend `npm start`) command from the command line to run your build tool and view your site from `localhost`.
 
-**Spending too much time on step #3?** Skip it and focus on the exercises. When you submit the assessment, let us know why you skipped this build tool setup step.
+**Spending too much time on step #3?** Skip it and focus on the exercises. When you submit your final assessment, please let us know why you skipped this build tool setup step in the `submission.md` file.
 
 ## Mockups
 
