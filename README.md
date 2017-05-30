@@ -26,14 +26,14 @@ Note the filter dropdown outlined in red.
 <img src="http://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_2.png" alt="Mockup_Hover" width="600" />
 
 ## Requirements
-1. Without adding or removing HTML elements, style each of the following modules to match the above mockup. Fonts have been provided for you and can be found in the accompanying `/src/views/partials/_fonts.ejs` file. Do not add or remove any of the HTML elements in the `src/views/partials/_testimonial.ejs`, `/src/views/partials/_cta.ejs`, or `/src/views/partials/_filterable-content.ejs` files. You may add attributes to the existing HTML elements, but don't add or remove any DOM elements, and don't edit a DOM element's tag name. Feel free to use CSS pseudoelements. All other files may be edited (e.g. `/src/views/pages/index.ejs`).
+1. Without adding or removing HTML elements, style each of the following modules to match the above mockup. Fonts have been provided for you and can be found in the accompanying `/src/views/partials/_fonts.ejs` file. Do not add or remove any of the HTML elements in the `/src/views/partials/_testimonial.ejs`, `/src/views/partials/_cta.ejs`, or `/src/views/partials/_filterable-content.ejs` files. You may add attributes to the existing HTML elements, but don't add or remove any DOM elements, and don't edit a DOM element's tag name. Feel free to use CSS pseudoelements. All other files may be edited (e.g. `/src/views/pages/index.ejs`).
 2. The page should be responsive. Use your best judgment for how narrow viewports should look.
 3. Don't use any CSS frameworks (e.g. Bootstrap). You should use a preprocessor, such as Sass.
 4. Focus on writing clean, reusable code.
 5. While all the modules should be styled to match the mockup, some require some additional functionality:
-    - **CTA:**
-        1. When clicking `Tell Me More` in the CTA Quote, fetch text from an API of your choice and update the text to the left of `Tell Me More`. (We recommend [the Chuck Norris jokes API](http://www.icndb.com/api/), but realize that might not be for everyone.)
-    - **Filter:**
+    - **Exercise 2 - CTA Quote:**
+        1. When clicking `Tell Me More`, fetch text from an API of your choice and update the text to the left of `Tell Me More`. (We recommend [the Chuck Norris jokes API](http://www.icndb.com/api/), but realize that might not be for everyone.)
+    - **Exercise 3 - Filterable Content:**
         1. Use the provided `/src/js/data/data.json` file to generate filterable categories as well as the individual content elements within the `/src/views/partials/_filterable-content.ejs` HTML. The items should be alphabetized by title.
         2. **Dropdowns:** If multiple checkboxes are checked (e.g. _Mystery_ and _Drama_), items from **_both_** categories should display (e.g. all items tagged with either _Mystery_ or _Drama_).
         3. The `Clear Filters` functionality is mandatory.
