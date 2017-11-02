@@ -44,10 +44,9 @@ Note the filter dropdown outlined in red.
 Want an extra challenge? Add some pizzazz to your page. **Note:** These steps are optional, but encouraged. :star2:
 
 1. Feeling particularly good? Use ES6 or React components.
-2. Use WebPack as a build tool.
+2. Replace Gulp and use WebPack as your build tool.
 3. Add a search field and functionality to the filter module (example in mockup).
-4. Add a way to clear the currently selected filters (example in mockup).
-5. Add some of your favorite node modules to the project, or modify your build tool with anything that strikes your fancy.
+4. Add some of your favorite node modules to the project, or modify your build tool with anything that strikes your fancy.
 
 ## Submission
 Be sure to fill out the `submission.md` file before submitting. Once complete, email either a) a zip of your work or b) a link to your GitHub repository to your recruiting specialist so they can send to the team.
