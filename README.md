@@ -53,6 +53,10 @@ Be sure to fill out the `submission.md` file before submitting. Once complete, e
 
 ## FAQs
 
+**When is the exercise due?**
+
+Please submit your exercise within three (3) days of receiving it.
+
 **Do I have to setup a build tool (Gulp, WebPack, Grunt, etc.)?**
 
 The build tool setup is part of the exercise, so we strongly encourage you to complete this step. If you absolutely can't set it up in time, skip that step and focus on the exercises in plain HTML/CSS/JS. When you submit your final assessment, please let us know why you skipped this build tool setup step in the `submission.md` file.
