@@ -80,12 +80,12 @@ Be sure to fill out the `submission.md` file before submitting. Once complete, e
 
 <details>
     <summary><strong>When is the exercise due?</strong></summary>
-    <p>Please submit your exercise within three (3) days of receiving it. Feel free to leave notes in `submission.md` to let us know what you would have done with more time — we'll appreciate the insight into your process!</p>
+    <p>Please submit your exercise within three (3) days of receiving it. Feel free to leave notes in <code>submission.md</code> to let us know what you would have done with more time — we'll appreciate the insight into your process!</p>
 </details>
 <br />
 <details>
     <summary><strong>Do I have to setup a build tool (Gulp, WebPack, Grunt, etc.)?</strong></summary>
-    <p>The build tool setup is part of the exercise, so we strongly encourage you to complete this step. If you absolutely can't set it up in time, skip that step and focus on the exercises in plain HTML/CSS/JS. When you submit your final assessment, please let us know why you skipped this build tool setup step in the `submission.md` file.</p>
+    <p>The build tool setup is part of the exercise, so we strongly encourage you to complete this step. If you absolutely can't set it up in time, skip that step and focus on the exercises in plain HTML/CSS/JS. When you submit your final assessment, please let us know why you skipped this build tool setup step in the <code>submission.md</code> file.</p>
 </details>
 <br />
 <details>
@@ -105,7 +105,7 @@ Be sure to fill out the `submission.md` file before submitting. Once complete, e
 <br />
 <details>
     <summary><strong>I'm running out of time! May I skip one of the exercises?</strong></summary>
-    <p>Although we expect you to finish all the exercises, life happens. If you aren't able to finish on time, focus on `Exercise 1 - Filterable Content` and start on the other exercise. Then give us some insight as to what you would have done in the `submission.md` file.</p>
+    <p>Although we expect you to finish all the exercises, life happens. If you aren't able to finish on time, focus on <code>Exercise 1 - Filterable Content</code> and start on the other exercise. Then give us some insight as to what you would have done in the <code>submission.md</code> file.</p>
 </details>
 <br />
 <details>
@@ -120,5 +120,5 @@ Be sure to fill out the `submission.md` file before submitting. Once complete, e
 <br />
 <details>
     <summary><strong>The instructions mention that I can use ES6 and React or Vue components, but the project itself uses EJS files. Normally, I would just build the page with React components and style them to match the mockup, but the instructions also say not to add or remove any of the HTML in the partials. Can I use the HTML that is in the EJS files, but as React or Vue components?</strong></summary>
-    <p>It's fine to use the HTML that’s in the EJS files — as long as the structure and HTML tags don’t change for each component, we’ll accept that. It’s meant to be a styling challenge, so maintaining the structure is essential. Just add a note for us in the `submission.md` file saying you didn’t use the EJS files themselves but, instead, maintained the original EJS markup in the React or Vue components.</p>
+    <p>It's fine to use the HTML that’s in the EJS files — as long as the structure and HTML tags don’t change for each component, we’ll accept that. It’s meant to be a styling challenge, so maintaining the structure is essential. Just add a note for us in the <code>submission.md</code> file saying you didn’t use the EJS files themselves but, instead, maintained the original EJS markup in the React or Vue components.</p>
 </details>
