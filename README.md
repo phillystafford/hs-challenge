@@ -100,7 +100,7 @@ Be sure to fill out the `submission.md` file before submitting. Once complete, e
 <br />
 <details>
     <summary><strong>What color values should I use?</strong></summary>
-    <p>The exact color values don't matter; just match colors close enough to the mockup as they appear on your screen. You may use a Chrome extension such as [ColorPick Eyedropper](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en) or anything you're comfortable with to fetch the colors from the mockup.</p>
+    <p>The exact color values don't matter; just match colors close enough to the mockup as they appear on your screen. You may use a Chrome extension such as <a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en" target="_blank">ColorPick Eyedropper</a> or anything you're comfortable with to fetch the colors from the mockup.</p> 
 </details>
 <br />
 <details>
