@@ -68,34 +68,42 @@ Be sure to fill out the `submission.md` file before submitting. Once complete, e
 
 ## FAQs
 
-**When is the exercise due?**
+<details>
+    <summary>When is the exercise due?</summary>
+    <p>Please submit your exercise within three (3) days of receiving it. Feel free to leave notes in `submission.md` to let us know what you would have done with more time — we'll appreciate the insight into your process!</p>
+</details>
 
-Please submit your exercise within three (3) days of receiving it. Feel free to leave notes in `submission.md` to let us know what you would have done with more time — we'll appreciate the insight into your process!
+<details>
+    <summary>Do I have to setup a build tool (Gulp, WebPack, Grunt, etc.)?</summary>
+    <p>The build tool setup is part of the exercise, so we strongly encourage you to complete this step. If you absolutely can't set it up in time, skip that step and focus on the exercises in plain HTML/CSS/JS. When you submit your final assessment, please let us know why you skipped this build tool setup step in the `submission.md` file.</p>
+</details>
 
-**Do I have to setup a build tool (Gulp, WebPack, Grunt, etc.)?**
+<details>
+    <summary>What browsers should I support?</summary>
+    <p>We'll look for compatibility in the following browsers:</p>
+    <ol>
+        <li>Google Chrome (latest version)</li>
+        <li>Mozilla Firefox (latest version)</li>
+        <li>Microsoft Edge (latest version)</li>
+    </ol>
+</details>
 
-The build tool setup is part of the exercise, so we strongly encourage you to complete this step. If you absolutely can't set it up in time, skip that step and focus on the exercises in plain HTML/CSS/JS. When you submit your final assessment, please let us know why you skipped this build tool setup step in the `submission.md` file.
+<details>
+    <summary>I'm running out of time! May I skip one of the exercises?</summary>
+    <p>Although we expect you to finish all the exercises, life happens. If you aren't able to finish on time, focus on `Exercise 1 - Filterable Content` and start on the other exercise. Then give us some insight as to what you would have done in the `submission.md` file.</p>
+</details>
 
-**What browsers should I support?**
+<details>
+    <summary>Should I make a separate page for each exercise?</summary>
+    <p>No thanks — we'd like to see all the exercises on one page. This single page should look as similar to the mockup as possible.</p>
+</details>
 
-We'll look for compatibility in the following browsers:
+<details>
+    <summary>The instructions say to style the modules to match the mockups "without adding or removing HTML elements", but I need to add filters to the dropdown in `Exercise 1 — Filterable Content`. What should I do?</summary>
+    <p>You may add the filters dynamically anywhere you see fit in the existing markup. As long as the outer/non-dynamic structure (i.e. the original HTML) doesn’t change, that’s fine. It’s meant to be a tricky styling exercise.</p>
+</details>
 
-1. Google Chrome (latest version)
-2. Mozilla Firefox (latest version)
-3. Microsoft Edge (latest version)
-
-**I'm running out of time! May I skip one of the exercises?**
-
-Although we expect you to finish all the exercises, life happens. If you aren't able to finish on time, focus on `Exercise 1 - Filterable Content` and start on the other exercise. Then give us some insight as to what you would have done in the `submission.md` file.
-
-**Should I make a separate page for each exercise?**
-
-No thanks — we'd like to see all the exercises on one page. This single page should look as similar to the mockup as possible.
-
-**The instructions say to style the modules to match the mockups "without adding or removing HTML elements", but I need to add filters to the dropdown in `Exercise 1 — Filterable Content`. What should I do?**
-
-You may add the filters dynamically anywhere you see fit in the existing markup. As long as the outer/non-dynamic structure (i.e. the original HTML) doesn’t change, that’s fine. It’s meant to be a tricky styling exercise.
-
-**The instructions mention that I can use ES6 and React or Vue components, but the project itself uses EJS files. Normally, I would just build the page with React components and style them to match the mockup, but the instructions also say not to add or remove any of the HTML in the partials. Can I use the HTML that is in the EJS files, but as React or Vue components?**
-
-It's fine to use the HTML that’s in the EJS files — as long as the structure and HTML tags don’t change for each component, we’ll accept that. It’s meant to be a styling challenge, so maintaining the structure is essential. Just add a note for us in the `submission.md` file saying you didn’t use the EJS files themselves but, instead, maintained the original EJS markup in the React or Vue components.
+<details>
+    <summary>The instructions mention that I can use ES6 and React or Vue components, but the project itself uses EJS files. Normally, I would just build the page with React components and style them to match the mockup, but the instructions also say not to add or remove any of the HTML in the partials. Can I use the HTML that is in the EJS files, but as React or Vue components?</summary>
+    <p>It's fine to use the HTML that’s in the EJS files — as long as the structure and HTML tags don’t change for each component, we’ll accept that. It’s meant to be a styling challenge, so maintaining the structure is essential. Just add a note for us in the `submission.md` file saying you didn’t use the EJS files themselves but, instead, maintained the original EJS markup in the React or Vue components.</p>
+</details>
