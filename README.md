@@ -99,6 +99,11 @@ Be sure to fill out the `submission.md` file before submitting. Once complete, e
 </details>
 <br />
 <details>
+    <summary><strong>What color values should I use?</strong></summary>
+    <p>The exact color values don't matter; just match colors close enough to the mockup as they appear on your screen. You may use a Chrome extension such as [ColorPick Eyedropper](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en) or anything you're comfortable with to fetch the colors from the mockup.</p>
+</details>
+<br />
+<details>
     <summary><strong>I'm running out of time! May I skip one of the exercises?</strong></summary>
     <p>Although we expect you to finish all the exercises, life happens. If you aren't able to finish on time, focus on `Exercise 1 - Filterable Content` and start on the other exercise. Then give us some insight as to what you would have done in the `submission.md` file.</p>
 </details>
