@@ -10,6 +10,8 @@ If everything is set up properly, anyone should be able to fork your project, ru
 
 **Spending too much time on step #3?** Skip it and focus on the exercises. When you submit your final assessment, please let us know why you skipped this build tool setup step in the `submission.md` file.
 
+---
+
 ## Mockups
 
 This code assessment is broken up into two exercises. All exercises should display on the same page.
@@ -18,13 +20,19 @@ This code assessment is broken up into two exercises. All exercises should displ
 
 The mockup with all filters collapsed. See the section below for how the expanded filter dropdowns should appear.
 
-<img src="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_3.png" alt="Mockup" width="600" />
+<a href="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_3.png" target="_blank">
+    <img src="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_3.png" alt="Mockup" width="600" />
+</a>
 
 #### Mockup with expanded filter
 
 Note the filter dropdown outlined in red.
 
-<img src="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" alt="Mockup_Hover" width="600" />
+<a href="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" target="_blank">
+    <img src="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" alt="Mockup_Hover" width="600" />
+</a>
+
+---
 
 ## Requirements
 
@@ -38,7 +46,7 @@ Note the filter dropdown outlined in red.
      1. Use the provided `/src/js/data/data.json` file to generate filterable categories as well as the individual content elements within the `/src/views/partials/_filterable-content.ejs` HTML. The items should be alphabetized by title.
      2. **Dropdowns:** If multiple checkboxes are checked (e.g. _Mystery_ and _Drama_), items from **_both_** categories should display (e.g. all items tagged with either _Mystery_ or _Drama_).
      3. The `Clear Filters` functionality is mandatory.
-   - **Exercise 2 - Testimonial:**
+   - **Exercise 2 - Testimonial Block:**
      1. When clicking `Tell Me More`, fetch text from an API of your choice and update the text within the quote to the left of `Tell Me More`. We recommend [the Random Quotes API](https://talaikis.com/api/quotes/random/), but there are other fun APIs like the [Chuck Norris jokes API](http://www.icndb.com/api/). We're flexible.
 
 6. Have fun with it! If you get stuck, that's OK. Get as far as you can.
@@ -66,20 +74,22 @@ Remember the `submission.md` file — this is your chance to tell us what you th
 
 Be sure to fill out the `submission.md` file before submitting. Once complete, email either a) a zip of your work or b) a link to your GitHub repository to your recruiting specialist so they can send to the team.
 
+---
+
 ## FAQs
 
 <details>
-    <summary>When is the exercise due?</summary>
+    <summary><strong>When is the exercise due?</strong></summary>
     <p>Please submit your exercise within three (3) days of receiving it. Feel free to leave notes in `submission.md` to let us know what you would have done with more time — we'll appreciate the insight into your process!</p>
 </details>
-
+<br />
 <details>
-    <summary>Do I have to setup a build tool (Gulp, WebPack, Grunt, etc.)?</summary>
+    <summary><strong>Do I have to setup a build tool (Gulp, WebPack, Grunt, etc.)?</strong></summary>
     <p>The build tool setup is part of the exercise, so we strongly encourage you to complete this step. If you absolutely can't set it up in time, skip that step and focus on the exercises in plain HTML/CSS/JS. When you submit your final assessment, please let us know why you skipped this build tool setup step in the `submission.md` file.</p>
 </details>
-
+<br />
 <details>
-    <summary>What browsers should I support?</summary>
+    <summary><strong>What browsers should I support?</strong></summary>
     <p>We'll look for compatibility in the following browsers:</p>
     <ol>
         <li>Google Chrome (latest version)</li>
@@ -87,23 +97,23 @@ Be sure to fill out the `submission.md` file before submitting. Once complete, e
         <li>Microsoft Edge (latest version)</li>
     </ol>
 </details>
-
+<br />
 <details>
-    <summary>I'm running out of time! May I skip one of the exercises?</summary>
+    <summary><strong>I'm running out of time! May I skip one of the exercises?</strong></summary>
     <p>Although we expect you to finish all the exercises, life happens. If you aren't able to finish on time, focus on `Exercise 1 - Filterable Content` and start on the other exercise. Then give us some insight as to what you would have done in the `submission.md` file.</p>
 </details>
-
+<br />
 <details>
-    <summary>Should I make a separate page for each exercise?</summary>
+    <summary><strong>Should I make a separate page for each exercise?</strong></summary>
     <p>No thanks — we'd like to see all the exercises on one page. This single page should look as similar to the mockup as possible.</p>
 </details>
-
+<br />
 <details>
-    <summary>The instructions say to style the modules to match the mockups "without adding or removing HTML elements", but I need to add filters to the dropdown in `Exercise 1 — Filterable Content`. What should I do?</summary>
+    <summary><strong>The instructions say to style the modules to match the mockups "without adding or removing HTML elements", but I need to add filters to the dropdown in <em>Exercise 1 — Filterable Content</em>. What should I do?</strong></summary>
     <p>You may add the filters dynamically anywhere you see fit in the existing markup. As long as the outer/non-dynamic structure (i.e. the original HTML) doesn’t change, that’s fine. It’s meant to be a tricky styling exercise.</p>
 </details>
-
+<br />
 <details>
-    <summary>The instructions mention that I can use ES6 and React or Vue components, but the project itself uses EJS files. Normally, I would just build the page with React components and style them to match the mockup, but the instructions also say not to add or remove any of the HTML in the partials. Can I use the HTML that is in the EJS files, but as React or Vue components?</summary>
+    <summary><strong>The instructions mention that I can use ES6 and React or Vue components, but the project itself uses EJS files. Normally, I would just build the page with React components and style them to match the mockup, but the instructions also say not to add or remove any of the HTML in the partials. Can I use the HTML that is in the EJS files, but as React or Vue components?</strong></summary>
     <p>It's fine to use the HTML that’s in the EJS files — as long as the structure and HTML tags don’t change for each component, we’ll accept that. It’s meant to be a styling challenge, so maintaining the structure is essential. Just add a note for us in the `submission.md` file saying you didn’t use the EJS files themselves but, instead, maintained the original EJS markup in the React or Vue components.</p>
 </details>
