@@ -28,7 +28,7 @@ Note the filter dropdown outlined in red.
 
 ## Requirements
 
-1. Without adding or removing HTML elements, style each of the following modules to match the above mockup. Fonts have been provided for you and can be found in the accompanying `/src/views/partials/_fonts.ejs` file. Do not add or remove any of the HTML elements in the `/src/views/partials/_testimonial.ejs` or `/src/views/partials/_filterable-content.ejs` files. You may add attributes to the existing HTML elements, but don't add or remove any DOM elements, and don't edit a DOM element's tag name. You may add filters dynamically to the filterable content dropdowns; just don't touch the main HTML markup. Feel free to use CSS pseudoelements. All other files may be edited (e.g. `/src/views/pages/index.ejs`).
+1. Without adding or removing HTML elements, style each of the following modules to match the above mockup. Fonts have been provided for you and can be found in the accompanying `/src/views/partials/_fonts.ejs` file. Do not add or remove any of the HTML elements in the `/src/views/partials/_testimonial.ejs` or `/src/views/partials/_filterable-content.ejs` files. You may add attributes to the existing HTML elements, but don't add or remove any DOM elements, and don't edit a DOM element's tag name. Feel free to use CSS pseudoelements. All other files may be edited (e.g. `/src/views/pages/index.ejs`).
 2. The page should be responsive. Use your best judgment for how narrow viewports should look.
 3. Don't use any CSS frameworks (e.g. Bootstrap). You should use a preprocessor, such as Sass.
 4. Focus on writing clean, reusable code.
@@ -52,16 +52,25 @@ Want an extra challenge? Add some pizzazz to your page. **Note:** These steps ar
 2. Replace Gulp and use WebPack as your build tool.
 3. Add a search field and functionality to the filter module (example in mockup).
 4. Add some of your favorite node modules to the project, or modify your build tool with anything that strikes your fancy.
+5. Add linting.
 
 #### Grading
 
-We recommend focusing on `Exercise 1 — Filterable Content` as it is graded more heavily. It's a good indicator of your attention to user experience and how you approach data puzzles. `Exercise 2 — Testimonial Block` is a more of a CSS challenge, so being visually precise while not touching the markup is key.
+We recommend focusing on `Exercise 1 — Filterable Content` as it is graded more heavily. It's a good indicator of your attention to user experience and how you approach data puzzles.
+
+`Exercise 2 — Testimonial Block` is a more of a CSS challenge, so being visually precise while not touching the markup is key.
+
+Remember the `submission.md` file — this is your chance to tell us what you thought about the activity and what else you would have done. It's a good way for us to get to know you and your process. We want to hear from you!
 
 ## Submission
 
 Be sure to fill out the `submission.md` file before submitting. Once complete, email either a) a zip of your work or b) a link to your GitHub repository to your recruiting specialist so they can send to the team.
 
 ## FAQs
+
+**When is the exercise due?**
+
+Please submit your exercise within three (3) days of receiving it. Feel free to leave notes in `submission.md` to let us know what you would have done with more time — we'll appreciate the insight into your process!
 
 **Do I have to setup a build tool (Gulp, WebPack, Grunt, etc.)?**
 
@@ -77,16 +86,16 @@ We'll look for compatibility in the following browsers:
 
 **I'm running out of time! May I skip one of the exercises?**
 
-Although we expect you to finish all the exercises, life happens. If you aren't able to finish on time, focus on `Exercise 1 - Filterable Content` and try to finish at least one other exercise. Then let us know why you skipped an exercise in the `submission.md` file.
+Although we expect you to finish all the exercises, life happens. If you aren't able to finish on time, focus on `Exercise 1 - Filterable Content` and start on the other exercise. Then give us some insight as to what you would have done in the `submission.md` file.
 
 **Should I make a separate page for each exercise?**
 
 No thanks — we'd like to see all the exercises on one page. This single page should look as similar to the mockup as possible.
 
-**The instructions say to style the modules to match the mockups "without adding or removing HTML elements", but I need to add filters to the dropdown in Exercise 1. What gives?**
+**The instructions say to style the modules to match the mockups "without adding or removing HTML elements", but I need to add filters to the dropdown in `Exercise 1 — Filterable Content`. What should I do?**
 
-You can add the filters dynamically anywhere you see fit in the existing markup. As long as the outer/non-dynamic structure (i.e. the original HTML) doesn’t change, that’s fine — it’s meant to be a tricky styling exercise.
+You may add the filters dynamically anywhere you see fit in the existing markup. As long as the outer/non-dynamic structure (i.e. the original HTML) doesn’t change, that’s fine. It’s meant to be a tricky styling exercise.
 
 **The instructions mention that I can use ES6 and React or Vue components, but the project itself uses EJS files. Normally, I would just build the page with React components and style them to match the mockup, but the instructions also say not to add or remove any of the HTML in the partials. Can I use the HTML that is in the EJS files, but as React or Vue components?**
 
-It's fine to use the HTML that’s in the EJS files — as long as the structure and HTML tags don’t change for each component we’ll accept that. It’s meant to be a tricky styling exercise so maintaining the structure is essential. Just add a note for us in the `submission.md` file saying you didn’t use the EJS files themselves but, instead, maintained the original EJS markup in the React or Vue components.
+It's fine to use the HTML that’s in the EJS files — as long as the structure and HTML tags don’t change for each component, we’ll accept that. It’s meant to be a styling challenge, so maintaining the structure is essential. Just add a note for us in the `submission.md` file saying you didn’t use the EJS files themselves but, instead, maintained the original EJS markup in the React or Vue components.
