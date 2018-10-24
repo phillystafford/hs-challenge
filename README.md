@@ -1,5 +1,7 @@
 # HubSpot Web Team Exercise - Instructions
 
+> **Note:** This activity was updated on October 23, 2018. If you first received the activity when there were 3 exercises instead of 2, check [this README](https://github.com/HubSpotWebTeam/CodeExercise/blob/3fe8969a251a1c34d3cbfe69fa231595649a1160/README.md) for the previous version and complete the 3 exercises according to those instructions.
+
 ## Setup
 
 1. Clone or download this repository (do not fork it).
