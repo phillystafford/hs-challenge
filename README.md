@@ -27,12 +27,10 @@ The mockup with all filters collapsed. See the section below for how the expande
 ### Mockup with expanded filter
 
 <details><summary><strong>View mockup with expanded filter</strong></summary>
-<p>
-    Note the filter dropdown outlined in red.
-    <a href="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" target="_blank">
+    <p>Note the filter dropdown outlined in red.</p>
+    <p><a href="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" target="_blank">
         <img src="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" alt="Mockup_Hover" width="600" />
-    </a>
-</p>
+    </a></p>
 </details>
 
 ---
