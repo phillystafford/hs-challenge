@@ -39,7 +39,7 @@ The mockup with all filters collapsed. See the section below for how the expande
 
 ## Requirements
 
-1. Without adding or removing HTML elements, style each of the following modules to match the above mockup. Fonts have been provided for you and can be found in the accompanying `/src/views/partials/_fonts.ejs` file. Do not add or remove any of the HTML elements in the `/src/views/partials/_testimonial.ejs` or `/src/views/partials/_filterable-content.ejs` files. You may add attributes to the existing HTML elements, but don't add or remove any DOM elements, and don't edit a DOM element's tag name. Feel free to use CSS pseudoelements. All other files may be edited (e.g. `/src/views/pages/index.ejs`).
+1. Without adding or removing HTML elements, style each of the following modules to match the above mockup. Fonts have been provided for you and can be found in the accompanying `/src/views/partials/_fonts.ejs` file. Do not change the DOM structure in the `/src/views/partials/_testimonial.ejs` or `/src/views/partials/_filterable-content.ejs` files. You may add attributes to the existing HTML elements, but don't add or remove any DOM elements, and don't edit a DOM element's tag name. Feel free to use CSS pseudoelements. All other files may be edited (e.g. `/src/views/pages/index.ejs`).
 2. The page should be responsive. Use your best judgment for how narrow viewports should look.
 3. Don't use any CSS frameworks (e.g. Bootstrap). You should use a preprocessor, such as Sass.
 4. Focus on writing clean, reusable code.
@@ -55,12 +55,12 @@ The mockup with all filters collapsed. See the section below for how the expande
 6. Have fun with it! If you get stuck, that's OK. Get as far as you can.
 7. Before submitting, answer the questions in `submission.md`.
 
-#### Bonus Points
+#### Bonus Point Suggestions
 
 Want an extra challenge? Add some pizzazz to your page. **Note:** These steps are optional, but encouraged. :star2:
 
 1. Feeling particularly good? Use ES6, React, or Vue components.
-2. Replace Gulp and use WebPack as your build tool.
+2. Replace Gulp and use WebPack or Parcel as your build tool.
 3. Add a search field and functionality to the filter module (example in mockup).
 4. Add some of your favorite node modules to the project, or modify your build tool with anything that strikes your fancy.
 5. Add linting.
@@ -122,6 +122,20 @@ Be sure to fill out the `submission.md` file before submitting. Once complete, e
 </details>
 <br />
 <details>
+    <summary>
+        <strong>Can I move the DOM elements into separate files?</strong>
+    </summary>
+    <p>Sure, organize your code however you see fit. Just don't modify the DOM structure itself. That restriction is intended to be a styling exercise — we want to see how you will style elements without modifying the HTML structure (aside from adding classes or other attributes).</p>
+</details>
+<details>
     <summary><strong>The instructions mention that I can use ES6 and React or Vue components, but the project itself uses EJS files. Normally, I would just build the page with React components and style them to match the mockup, but the instructions also say not to add or remove any of the HTML in the partials. Can I use the HTML that is in the EJS files, but as React or Vue components?</strong></summary>
     <p>It's fine to use the HTML that’s in the EJS files — as long as the structure and HTML tags don’t change for each component, we’ll accept that. It’s meant to be a styling challenge, so maintaining the structure is essential. Just add a note for us in the <code>submission.md</code> file saying you didn’t use the EJS files themselves but, instead, maintained the original EJS markup in the React or Vue components.</p>
+</details>
+<details>
+    <summary><strong>Instead of Gulp, can I use [insert build tool here]?</strong></summary>
+    <p>Yes! Use any build tool you want. We should be able to install your project with npm and run it locally. Just drop us a line in your `submission.md` file explaining why you deviated. We don't mind you getting creative — just keep us posted with what you changed and why!</p>
+</details>
+<details>
+    <summary><strong>Other questions?</strong></summary>
+    <p>Ultimately, we want you to use good judgement for how you code this exercise, but still abide by the basic requirements. If you make a judgement call that differs from the directions, let us know why in your `submission.md` file. Just like the real world, you have a lot of say in architectural decisions, provided you have valid reasons, and we're curious to hear why you made certain calls. (After all, chances are they could be better than our bonus point suggestions!) That's what the `submission.md` file is for.</p>
 </details>
