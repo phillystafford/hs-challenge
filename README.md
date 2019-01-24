@@ -134,10 +134,10 @@ Be sure to fill out the `submission.md` file before submitting. Once complete, e
 <br />
 <details>
     <summary><strong>Instead of Gulp, can I use [insert build tool here]?</strong></summary>
-    <p>Yes! Use any build tool you want. We should be able to install your project with npm and run it locally. Just drop us a line in your `submission.md` file explaining why you deviated. We don't mind you getting creative — just keep us posted with what you changed and why!</p>
+    <p>Yes! Use any build tool you want. We should be able to install your project with npm and run it locally. Just drop us a line in your <code>submission.md</code> file explaining why you deviated. We don't mind you getting creative — just keep us posted with what you changed and why!</p>
 </details>
 <br />
 <details>
     <summary><strong>Other questions?</strong></summary>
-    <p>Ultimately, we want you to use good judgement for how you code this exercise, but still abide by the basic requirements. If you make a judgement call that differs from the directions, let us know why in your `submission.md` file. Just like the real world, you have a lot of say in architectural decisions, provided you have valid reasons, and we're curious to hear why you made certain calls. (After all, chances are they could be better than our bonus point suggestions!) That's what the `submission.md` file is for.</p>
+    <p>Ultimately, we want you to use good judgement for how you code this exercise, but still abide by the basic requirements. If you make a judgement call that differs from the directions, let us know why in your <code>submission.md</code> file. Just like the real world, you have a lot of say in architectural decisions, provided you have valid reasons, and we're curious to hear why you made certain calls. (After all, chances are they could be better than our bonus point suggestions!) That's what the <code>submission.md</code> file is for.</p>
 </details>
