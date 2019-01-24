@@ -24,13 +24,16 @@ The mockup with all filters collapsed. See the section below for how the expande
     <img src="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_3.png" alt="Mockup" width="600" />
 </a>
 
-#### Mockup with expanded filter
+### Mockup with expanded filter
 
-Note the filter dropdown outlined in red.
-
-<a href="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" target="_blank">
-    <img src="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" alt="Mockup_Hover" width="600" />
-</a>
+<details><summary><strong>View mockup with expanded filter</strong></summary>
+<p>
+    Note the filter dropdown outlined in red.
+    <a href="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" target="_blank">
+        <img src="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" alt="Mockup_Hover" width="600" />
+    </a>
+</p>
+</details>
 
 ---
 
