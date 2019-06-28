@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: 'roboto', 'Montserrat'
+}
+
+.exercise-header {
+  padding: 1rem 0;
+  margin: 2rem 0;
+  text-align: center;
+  color: #ffffff;
+  background-color: #00a4bd;
+}
