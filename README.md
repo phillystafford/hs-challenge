@@ -54,7 +54,7 @@ Also, the bonus tasks listed are just examples, feel free to add anything you th
 
 ### **Exercise 1 - Testimonial Block**
 
-The DOM structure for following image has been included in `./src/views/index.html`.
+The DOM structure for the following image has been included in `./src/views/index.html`.
 
 Using **CSS only**, style the provided HTML to match the design in the below image as closely as possible.
 
