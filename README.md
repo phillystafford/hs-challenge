@@ -141,7 +141,7 @@ We'll look for compatibility with the following browsers:
 
 ### **What color values should I use?**
 
-The exact color values don't matter; just try to get a close to the mockup as you can. You could also use a Chrome extension such as <a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en" target="_blank">this color-picker</a>.
+The exact color values don't matter; just try to get as close to the mockup as you can. You could also use a Chrome extension such as <a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en" target="_blank">this color-picker</a>.
 
 ### **Should I create a new page for each exercise?**
 
