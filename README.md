@@ -149,4 +149,4 @@ No, please use a single page for all exercises. Please use the provided blue hea
 
 ### **I'm running out of time, may I skip one of the exercises?**
 
-Although we expect you to finish all of the exercises, we understand that life happens. If you aren't able to finish on time, focus on `Exercise 2` and try to make a start on the other exercise. Then give us some insight as to what you would have done in the `submission.md` file.
+Although we expect you to finish all of the exercises, we understand that life happens. If you aren't able to finish on time, focus on `Exercise 2` and try to start on the other exercise. Then give us some insight as to what you would have done in the `submission.md` file.
