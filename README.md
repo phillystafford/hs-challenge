@@ -58,7 +58,7 @@ The DOM structure for the following image has been included in `./src/views/inde
 
 Using **CSS only**, style the provided HTML to match the design in the below image as closely as possible.
 
-![exercise 3](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/exercise-3.png)
+![exercise 3](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/exercise-1.png)
 
 **Requirements:**
 
