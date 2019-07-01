@@ -112,7 +112,7 @@ Create the following interface using HTML, CSS & Javascript:
 
 ## How to Submit
 
-Be sure to fill out the `submission.md` file before submitting. If you deviated from the instructions or have any feedback that's the place to put it!
+Fill out the `submission.md` file before submitting. If you deviated from the instructions or have any feedback, that's the place to put it!
 
  Once complete, email either `(a)` **a zip of your work or** `(b)` **a link to your GitHub repository** to your recruiting specialist so they can forward it to the web team.
 
