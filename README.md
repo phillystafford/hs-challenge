@@ -1,5 +1,8 @@
 # HubSpot Web Team Exercise - Instructions
 
+#### **Note - we updated this exercise on 03 July 2019. If you already started the previous version please refer to the previous [readme](https://github.com/HubSpotWebTeam/CodeExercise/blob/9a4a9ecafe5c5ef40d738d349ec58859920cba4b/README.md)**.
+
+
 Welcome to the HubSpot Web Team's coding exercise 👋
 
 Make sure you read these instructions carefully before you start. If you have any questions please reach out to your recruiting specialist.
@@ -128,7 +131,7 @@ Fill out the `submission.md` file before submitting. If you deviated from the in
 
 ### **When is the assessment due?**
 
-Please submit your exercise within seven (7) days of receiving it.
+Please submit your exercise within four (4) days of receiving it. If you need extra time please reach out to your recruiting specialist.
 
 ### **Which browsers should I support?**
 
