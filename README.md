@@ -1,143 +1,155 @@
 # HubSpot Web Team Exercise - Instructions
 
+#### **Note - we updated this exercise on 03 July 2019. If you already started the previous version please refer to the previous [readme](https://github.com/HubSpotWebTeam/CodeExercise/blob/9a4a9ecafe5c5ef40d738d349ec58859920cba4b/README.md)**.
+
+
+Welcome to the HubSpot Web Team's coding exercise 👋
+
+Make sure you read these instructions carefully before you start. If you have any questions please reach out to your recruiting specialist.
+
+The goal of this exercise is to create a simple app that;
+
+- builds and compiles your code locally
+- can be viewed at `localhost` using a local web server
+- meets the requirements for the 2 exercises outlined in the `Exercises` section below.
+
+If you have any comments or feedback please include it in the `submission.md` file. This is your chance to tell us what you thought about the exercise and any ideas or issues you may have had. It's a good way for us to get to know you and your process. We want to hear from you!
+
+*Happy coding and good luck!*
+
+<br />
+
+---
+
+<br />
+
 ## Setup
 
-1. Clone or download this repository (do not fork it).
-2. Install [Node.js](https://nodejs.org/en/download/) and then run `npm install` on your project. We've included recommended packages in `package.json` for you to use, but feel free to add or remove any packages.
-3. Set up a build tool (Gulp, WebPack, Grunt, etc.) to compile from the existing `/src` folder to a `/build` directory and run your site locally. If you prefer Gulp, we've included recommended tasks in `gulpfile.js` for you to use, but that file can be modified as much as you see fit.
+1. Clone or download this repository (please do not fork it).
 
-If everything is set up properly, anyone should be able to fork your project, run `npm install`, and issue a start command (we recommend `npm start`) command from the command line to run your build tool and view your site from `localhost`.
+2. Install [node.js](https://nodejs.org/en/download/), and then run `npm install` in your project directory. We've included some recommended packages in `package.json` for you to use, but feel free to add or remove packages as needed.
 
-**Spending too much time on step #3?** Skip it and focus on the exercises. When you submit your final assessment, please let us know why you skipped this build tool setup step in the `submission.md` file.
+3. By default, the project uses [Parcel](https://parceljs.org/) - a bundler that includes live reloading and a local dev server ready for you to use. Run `npm run dev` to start the local dev server and you're good to go.
 
----
+**Note** - you're free to replace `Parcel` with your preferred bundler (e.g. Webpack, Gulp). The only requirement we ask is that running `npm install` from the command line compiles your project and running `npm run dev` from the command line starts a local server where we can view your project at `localhost`.
 
-## Mockups
+**Bonus Points**: if you add anything that improves the dev experience, e.g. unit tests, linting, etc.
 
-This code assessment is broken up into two exercises. All exercises should display on the same page.
-
-### Mockup with collapsed filter
-
-The mockup with all filters collapsed. See the section below for how the expanded filter dropdowns should appear.
-
-<a href="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_3.png" target="_blank">
-    <img src="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise_3.png" alt="Mockup" width="600" />
-</a>
-
-### Mockup with expanded filter
-
-<details><summary><strong>View mockup with expanded filter</strong></summary>
-    <br />
-    <p>Note the filter dropdown outlined in red.</p>
-    <p><a href="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" target="_blank">
-        <img src="https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/web-team-exercise-v2_expanded.png" alt="Mockup_Hover" width="600" />
-    </a></p>
-</details>
+<br />
 
 ---
 
-## Requirements
+<br />
 
-1. Without adding or removing HTML elements, style each of the following modules to match the above mockup. Fonts have been provided for you and can be found in the accompanying `/src/views/partials/_fonts.ejs` file. Do not change the DOM structure in the `/src/views/partials/_testimonial.ejs` or `/src/views/partials/_filterable-content.ejs` files. You may add attributes to the existing HTML elements, but don't add or remove any DOM elements, and don't edit a DOM element's tag name. Feel free to use CSS pseudoelements. All other files may be edited (e.g. `/src/views/pages/index.ejs`).
-2. The page should be responsive. Use your best judgment for how narrow viewports should look.
-3. Don't use any CSS frameworks (e.g. Bootstrap). You should use a preprocessor, such as Sass.
-4. Focus on writing clean, reusable code.
-5. While all the modules should be styled to match the mockup, some require some additional functionality:
+## Exercises
 
-   - **Exercise 1 - Filterable Content:**
-     1. Use the provided `/src/js/data/data.json` file to generate filterable categories as well as the individual content elements within the `/src/views/partials/_filterable-content.ejs` HTML. The items should be alphabetized by title.
-     2. **Dropdowns:** If multiple checkboxes are checked (e.g. _Mystery_ and _Drama_), items from **_both_** categories should display (e.g. all items tagged with either _Mystery_ or _Drama_).
-     3. The `Clear Filters` functionality is mandatory.
-   - **Exercise 2 - Testimonial Block:**
-     1. When clicking `Tell Me More`, fetch text from an API of your choice and update the text within the quote to the left of `Tell Me More`. We recommend [the Random Quotes API](https://talaikis.com/api/quotes/random/), but there are other fun APIs like the [Chuck Norris jokes API](http://www.icndb.com/api/). We're flexible.
+This assessment consists of 2 exercises, outlined below.
 
-6. Have fun with it! If you get stuck, that's OK. Get as far as you can.
-7. Before submitting, answer the questions in `submission.md`.
+Each exercise has `requirements` and `bonus points` listed. You should focus on the requirements, and only consider the bonus points if you have completed the requirements.
 
-#### Bonus Point Suggestions
+You won't be penalized for skipping the bonus tasks, but please bear in mind that this assessment is your chance to showcase your skills and demonstrate what you can do, so we recommend that you put in as much effort as possible.
 
-Want an extra challenge? Add some pizzazz to your page. **Note:** These steps are optional, but encouraged. :star2:
+Also, the bonus tasks listed are just examples, feel free to add anything you think might improve the app. Try to imagine the app will be used by real people, and put a focus on a good user experience.
 
-1. Feeling particularly good? Use ES6, React, or Vue components.
-2. Replace Gulp and use WebPack or Parcel as your build tool.
-3. Add a search field and functionality to the filter module (example in mockup).
-4. Add some of your favorite node modules to the project, or modify your build tool with anything that strikes your fancy.
-5. Add linting.
-
-#### Grading
-
-We recommend focusing on `Exercise 1 — Filterable Content` as it is graded more heavily. It's a good indicator of your attention to user experience and how you approach data puzzles.
-
-`Exercise 2 — Testimonial Block` is a more of a CSS challenge, so being visually precise while not touching the markup is key.
-
-Remember the `submission.md` file — this is your chance to tell us what you thought about the activity and what else you would have done. It's a good way for us to get to know you and your process. We want to hear from you!
-
-## Submission
-
-Be sure to fill out the `submission.md` file before submitting. Once complete, email either a) a zip of your work or b) a link to your GitHub repository to your recruiting specialist so they can send to the team.
+<br />
 
 ---
+
+### **Exercise 1 - Testimonial Block**
+
+The DOM structure for the following image has been included in `./src/views/index.html`.
+
+Using **CSS only**, style the provided HTML to match the design in the below image as closely as possible.
+
+![exercise 3](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/exercise-1.png)
+
+**Requirements:**
+
+- do not modify the DOM structure provided.
+- do not use any CSS frameworks (e.g. **Bootstrap**).
+- the design must be responsive - use whatever number of breakpoints you think are necessary. You're free to choose whatever breakpoint values you think work best.
+
+**Bonus Points:**
+
+- write neat, modular code.
+- use a pre-processor like **SASS** or
+**SCSS**.
+- use variables/mixins where appropriate.
+
+---
+
+### **Exercise 2 - Filterable Content**
+
+Create the following interface using HTML, CSS & Javascript:
+
+![exercise 2](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/demo.gif)
+
+**Requirements:**
+
+- all of the metadata and images in the mockup can be retrieved from this [endpoint](https://hubspotwebteam.github.io/CodeExercise/src/js/data/data.json) in `JSON` format. You must use this api to retrieve the data.
+- the grid items should be sorted alphabetically by `Title` by default.
+- the `Movies` / `Books` radio buttons should be cleared by default, but once selected can only be toggled between one another. They should be cleared by the `CLEAR FILTERS` button.
+- the `GENRE` / `YEAR` dropdowns should match the mockup. If multiple check-boxes are checked, items from **all** checked categories should appear. E.g. if `action` and `comedy` are both selected, the list should show items with **either** of those tags.
+- `CLEAR FILTERS` should clear all filters and return the list to it's original default state.
+- The `search` field should filter by `Title`. It should be case insensitive.
+- write clean, reusable, DRY code.
+- the design must be responsive - use whatever number of breakpoints you think are necessary. You're free to choose whatever breakpoint values you think work best.
+- do not use CSS frameworks (e.g. Bootstrap). You can (and we encourage you to) use pre-processors like SASS or SCSS.
+- Have fun! If you get stuck don't worry, just do as much as you can.
+
+**Bonus Points:**
+
+- Use modern JavaScript (ES6+), but be wary of browser support (see the **FAQ** section for a list of browsers we'll check support for).
+- Use a Javascript framework, e.g. React, Angular, Vue etc.
+- Use linting/prettify for neater code.
+- Add fuzzy search to the search field.
+- Anything that improves the experience for the user.
+
+**Note** - if you have any issue retrieving the data from the endpoint, we've included the JSON data locally in `/src/js/data/data.json`. If you end up using this instead of the API, please explain why in the `submission.md` file.
+
+<br />
+
+---
+
+<br />
+
+## How to Submit
+
+Fill out the `submission.md` file before submitting. If you deviated from the instructions or have any feedback, that's the place to put it!
+
+ Once complete, email either `(a)` **a zip of your work or** `(b)` **a link to your GitHub repository** to your recruiting specialist so they can forward it to the web team.
+
+**Note** - if you're going to host your project online, kudos to you! Please include that link in your submission - but don't forget to provide the zip/repository link so that we can take a look at your code.
+
+<br />
+
+---
+
+<br />
 
 ## FAQs
 
-<details>
-    <summary><strong>When is the exercise due?</strong></summary>
-    <p>Please submit your exercise within three (3) days of receiving it. Feel free to leave notes in <code>submission.md</code> to let us know what you would have done with more time — we'll appreciate the insight into your process!</p>
-</details>
-<br />
-<details>
-    <summary><strong>Do I have to setup a build tool (Gulp, WebPack, Grunt, etc.)?</strong></summary>
-    <p>The build tool setup is part of the exercise, so we strongly encourage you to complete this step. If you absolutely can't set it up in time, skip that step and focus on the exercises in plain HTML/CSS/JS. When you submit your final assessment, please let us know why you skipped this build tool setup step in the <code>submission.md</code> file.</p>
-</details>
-<br />
-<details>
-    <summary><strong>What browsers should I support?</strong></summary>
-    <p>We'll look for compatibility in the following browsers:</p>
-    <ol>
-        <li>Google Chrome (latest version)</li>
-        <li>Mozilla Firefox (latest version)</li>
-        <li>Microsoft Edge (latest version)</li>
-    </ol>
-</details>
-<br />
-<details>
-    <summary><strong>What color values should I use?</strong></summary>
-    <p>The exact color values don't matter; just match colors close enough to the mockup as they appear on your screen. You may use a Chrome extension such as <a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en" target="_blank">ColorPick Eyedropper</a> or anything you're comfortable with to fetch the colors from the mockup.</p> 
-</details>
-<br />
-<details>
-    <summary><strong>I'm running out of time! May I skip one of the exercises?</strong></summary>
-    <p>Although we expect you to finish all the exercises, life happens. If you aren't able to finish on time, focus on <code>Exercise 1 - Filterable Content</code> and start on the other exercise. Then give us some insight as to what you would have done in the <code>submission.md</code> file.</p>
-</details>
-<br />
-<details>
-    <summary><strong>Should I make a separate page for each exercise?</strong></summary>
-    <p>No thanks — we'd like to see all the exercises on one page. This single page should look as similar to the mockup as possible.</p>
-</details>
-<br />
-<details>
-    <summary><strong>The instructions say to style the modules to match the mockups "without adding or removing HTML elements", but I need to add filters to the dropdown in <em>Exercise 1 — Filterable Content</em>. What should I do?</strong></summary>
-    <p>You may add the filters dynamically anywhere you see fit in the existing markup. As long as the outer/non-dynamic structure (i.e. the original HTML) doesn’t change, that’s fine. It’s meant to be a tricky styling exercise.</p>
-</details>
-<br />
-<details>
-    <summary>
-        <strong>Can I move the DOM elements into separate files?</strong>
-    </summary>
-    <p>Sure, organize your code however you see fit. Just don't modify the DOM structure itself. That restriction is intended to be a styling exercise — we want to see how you will style elements without modifying the HTML structure (aside from adding classes or other attributes).</p>
-</details>
-<br />
-<details>
-    <summary><strong>The instructions mention that I can use ES6 and React or Vue components, but the project itself uses EJS files. Normally, I would just build the page with React components and style them to match the mockup, but the instructions also say not to add or remove any of the HTML in the partials. Can I use the HTML that is in the EJS files, but as React or Vue components?</strong></summary>
-    <p>It's fine to use the HTML that’s in the EJS files — as long as the structure and HTML tags don’t change for each component, we’ll accept that. It’s meant to be a styling challenge, so maintaining the structure is essential. Just add a note for us in the <code>submission.md</code> file saying you didn’t use the EJS files themselves but, instead, maintained the original EJS markup in the React or Vue components.</p>
-</details>
-<br />
-<details>
-    <summary><strong>Instead of Gulp, can I use [insert build tool here]?</strong></summary>
-    <p>Yes! Use any build tool you want. We should be able to install your project with npm and run it locally. Just drop us a line in your <code>submission.md</code> file explaining why you deviated. We don't mind you getting creative — just keep us posted with what you changed and why!</p>
-</details>
-<br />
-<details>
-    <summary><strong>Other questions?</strong></summary>
-    <p>Ultimately, we want you to use good judgement for how you code this exercise, but still abide by the basic requirements. If you make a judgement call that differs from the directions, let us know why in your <code>submission.md</code> file. Just like the real world, you have a lot of say in architectural decisions, provided you have valid reasons, and we're curious to hear why you made certain calls. (After all, chances are they could be better than our bonus point suggestions!) That's what the <code>submission.md</code> file is for.</p>
-</details>
+### **When is the assessment due?**
+
+Please submit your exercise within four (4) days of receiving it. If you need extra time please reach out to your recruiting specialist.
+
+### **Which browsers should I support?**
+
+We'll look for compatibility with the following browsers:
+
+- **Google Chrome** (latest version)
+- **Apple Safari** (latest version)
+- **Mozilla Firefox** (latest version)
+- **Microsoft Edge** (latest version)
+
+### **What color values should I use?**
+
+The exact color values don't matter; just try to get as close to the mockup as you can. You could also use a Chrome extension such as <a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en" target="_blank">this color-picker</a>.
+
+### **Should I create a new page for each exercise?**
+
+No, please use a single page for all exercises. Please use the provided blue headers to separate the exercises.
+
+### **I'm running out of time, may I skip one of the exercises?**
+
+Although we expect you to finish all of the exercises, we understand that life happens. If you aren't able to finish on time, focus on `Exercise 2` and try to start on the other exercise. Then give us some insight as to what you would have done in the `submission.md` file.
