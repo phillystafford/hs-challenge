@@ -1,8 +1,5 @@
 # HubSpot Web Team Exercise - Instructions
 
-#### **Note - we updated this exercise on 03 July 2019. If you already started the previous version please refer to the previous [readme](https://github.com/HubSpotWebTeam/CodeExercise/blob/9a4a9ecafe5c5ef40d738d349ec58859920cba4b/README.md)**.
-
-
 Welcome to the HubSpot Web Team's coding exercise 👋
 
 Make sure you read these instructions carefully before you start. If you have any questions please reach out to your recruiting specialist.
@@ -82,7 +79,7 @@ Using **CSS only**, style the provided HTML to match the design in the below ima
 
 Create the following interface using HTML, CSS & Javascript:
 
-![exercise 2](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/demo.gif)
+![exercise 2](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/exercise-2.gif)
 
 **Requirements:**
 
