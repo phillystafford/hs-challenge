@@ -81,6 +81,10 @@ Create the following interface using HTML, CSS & Javascript:
 
 ![exercise 2](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/exercise-2.gif)
 
+Close up of dropdown:
+
+![exercise 2 - dropdown](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/dropdown.png)
+
 **Requirements:**
 
 - all of the metadata and images in the mockup can be retrieved from this [endpoint](https://hubspotwebteam.github.io/CodeExercise/src/js/data/data.json) in `JSON` format. You must use this api to retrieve the data.
