@@ -82,7 +82,15 @@ Using **CSS only**, style the provided HTML to match the design in the below ima
 
 Create the following interface using HTML, CSS & Javascript:
 
+<<<<<<< Updated upstream
 ![exercise 2](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/demo.gif)
+=======
+![exercise 2](./exercise-2.gif)
+
+Close up of dropdown:
+
+![exercise 2 - dropdown](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/dropdown.png)
+>>>>>>> Stashed changes
 
 **Requirements:**
 
