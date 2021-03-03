@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel src/views/index.html --open --out-dir build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prod": "parcel build src/index.html --out-dir build"
+    "prod": "parcel build src/views/index.html --out-dir build"
   },
   "author": "HubSpot Applicant",
   "license": "ISC",

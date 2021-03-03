@@ -1,8 +1,5 @@
 # HubSpot Web Team Exercise - Instructions
 
-#### **Note - we updated this exercise on 03 July 2019. If you already started the previous version please refer to the previous [readme](https://github.com/HubSpotWebTeam/CodeExercise/blob/9a4a9ecafe5c5ef40d738d349ec58859920cba4b/README.md)**.
-
-
 Welcome to the HubSpot Web Team's coding exercise 👋
 
 Make sure you read these instructions carefully before you start. If you have any questions please reach out to your recruiting specialist.
@@ -61,7 +58,7 @@ The DOM structure for the following image has been included in `./src/views/inde
 
 Using **CSS only**, style the provided HTML to match the design in the below image as closely as possible.
 
-![exercise 3](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/exercise-1.png)
+![exercise 1](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/exercise-1.png)
 
 **Requirements:**
 
@@ -82,15 +79,11 @@ Using **CSS only**, style the provided HTML to match the design in the below ima
 
 Create the following interface using HTML, CSS & Javascript:
 
-<<<<<<< Updated upstream
-![exercise 2](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/demo.gif)
-=======
 ![exercise 2](./exercise-2.gif)
 
 Close up of dropdown:
 
 ![exercise 2 - dropdown](https://cdn2.hubspot.net/hubfs/53/web_team/web-team-test/dropdown.png)
->>>>>>> Stashed changes
 
 **Requirements:**
 
