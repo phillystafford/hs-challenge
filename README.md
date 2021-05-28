@@ -26,9 +26,9 @@ If you have any comments or feedback please include it in the `submission.md` fi
 
 2. Install [node.js](https://nodejs.org/en/download/), and then run `npm install` in your project directory. We've included some recommended packages in `package.json` for you to use, but feel free to add or remove packages as needed.
 
-3. By default, the project uses [Parcel](https://parceljs.org/) - a bundler that includes live reloading and a local dev server ready for you to use. Run `npm run dev` to start the local dev server and you're good to go.
+3. By default, the project uses [Parcel](https://parceljs.org/) - a bundler that includes live reloading and a local dev server ready for you to use. Run `npm run start` to start the local dev server and you're good to go.
 
-**Note** - you're free to replace `Parcel` with your preferred bundler (e.g. Webpack, Gulp). The only requirement we ask is that running `npm install` from the command line compiles your project and running `npm run dev` from the command line starts a local server where we can view your project at `localhost`.
+**Note** - you're free to replace `Parcel` with your preferred bundler (e.g. Webpack, Gulp). The only requirement we ask is that running `npm install` from the command line compiles your project and running `npm run start` from the command line starts a local server where we can view your project at `localhost`.
 
 **Bonus Points**: if you add anything that improves the dev experience, e.g. unit tests, linting, etc.
 
