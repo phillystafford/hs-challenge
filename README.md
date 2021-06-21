@@ -87,7 +87,7 @@ Close up of dropdown:
 
 **Requirements:**
 
-- all of the metadata and images in the mockup can be retrieved from this [endpoint](https://hubspotwebteam.github.io/CodeExercise/src/js/data/data.json) in `JSON` format. You must use this api to retrieve the data.
+- all of the metadata and images in the mockup can be retrieved from this [endpoint](https://raw.githubusercontent.com/HubSpotWebTeam/CodeExercise/main/src/js/data/data.json) in `JSON` format. You must use this api to retrieve the data.
 - the grid items should be sorted alphabetically by `Title` by default.
 - the `Movies` / `Books` radio buttons should be cleared by default, but once selected can only be toggled between one another. They should be cleared by the `CLEAR FILTERS` button.
 - the `GENRE` / `YEAR` dropdowns should match the mockup. If multiple check-boxes are checked, items from **all** checked categories should appear. E.g. if `action` and `comedy` are both selected, the list should show items with **either** of those tags.
