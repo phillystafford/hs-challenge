@@ -1,21 +1,21 @@
 {
   "name": "hubspot-code-exercise",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "HubSpot Code Exercise",
   "scripts": {
     "start": "parcel serve src/views/index.html --open",
-    "build": "parcel build src/views/index.html",
+    "build": "rm -Rf dist/ && parcel build src/views/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "HubSpot Applicant",
   "license": "ISC",
   "private": true,
   "dependencies": {
-    "parcel": "2.0.0-beta.2"
+    "parcel": "^2.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.14.3",
-    "@babel/core": "^7.14.3",
-    "@babel/preset-env": "^7.14.2"
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.12",
+    "@babel/preset-env": "^7.16.11"
   }
 }
