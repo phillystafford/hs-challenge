@@ -28,9 +28,11 @@ If you have any comments or feedback please include it in the `submission.md` fi
 
 3. By default, the project uses [Parcel](https://parceljs.org/) - a bundler that includes live reloading and a local dev server ready for you to use. Run `npm run start` to start the local dev server and you're good to go.
 
-**Note** - you're free to replace `Parcel` with your preferred bundler (e.g. Webpack, Gulp). The only requirement we ask is that running `npm install` from the command line compiles your project and running `npm run start` from the command line starts a local server where we can view your project at `localhost`.
-
-**Bonus Points**: if you add anything that improves the dev experience, e.g. unit tests, linting, etc.
+> **Note**
+>
+> You're free to replace `Parcel` with your preferred bundler (e.g. Webpack, Gulp). The only requirement we ask is that running `npm install` from the command line compiles your project and running `npm run start` from the command line starts a local server where we can view your project at `localhost`.
+>
+> **Bonus Points**: if you add anything that improves the dev experience, e.g. unit tests, linting, etc.
 
 <br />
 
@@ -125,7 +127,7 @@ Fill out the `submission.md` file before submitting. If you deviated from the in
 >
 > If you're going to host your project online, kudos to you! Please include that link in your submission - but don't forget to provide the zip/repository link so that we can take a look at your code.
 >
-> **If you are providing a zip file**, please try to exclude the `node_modules` folder from it to keep the zip file small.
+> **If you are providing a zip file**, please try to exclude the `node_modules` and `.parcel-cache` folders from it to keep the zip file small.
 
 <br />
 
