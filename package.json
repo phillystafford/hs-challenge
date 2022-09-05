@@ -1,6 +1,6 @@
 {
   "name": "hubspot-code-exercise",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "HubSpot Code Exercise",
   "scripts": {
     "start": "parcel serve src/views/index.html --open",
