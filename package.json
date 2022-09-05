@@ -11,11 +11,11 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
-    "parcel": "^2.2.1"
+    "parcel": "^2.7.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.16.8",
-    "@babel/core": "^7.16.12",
-    "@babel/preset-env": "^7.16.11"
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10"
   }
 }
