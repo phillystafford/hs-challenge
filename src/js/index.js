@@ -1,7 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import 'normalize.css';
 import '../styles/base/index.scss';
 
-console.log('App Ready');
+ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'));
 
 // TODO: SASS
 // TODO: Use mixins for media queries and font sizes etc.
