@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import MediaItem from '../MediaItem/MediaItem';
 
 function MediaLibrary() {
-  const [items, setItems] = useState(() => {
+  const [mediaItems, setItems] = useState(() => {
     return [];
   });
 
@@ -17,20 +17,34 @@ function MediaLibrary() {
       .then((json) => setItems(json.media));
   }, []);
 
-  console.log(items);
+  console.log(mediaItems);
 
-  const allMediaItems = items.map((item) => {
-    return (
-      <MediaItem
-        key={`${item.name}-${item.year}`}
-        title={item.title}
-        year={item.year}
-        poster={item.poster}
-        genre={item.genre}
-        type={item.type}
-      />
-    );
-  });
+  const allMediaItems = mediaItems
+    .sort((a, b) => {
+      const nameA = a.title.toUpperCase(); // ignore upper and lowercase
+      const nameB = b.title.toUpperCase(); // ignore upper and lowercase
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      // names must be equal
+      return 0;
+    })
+    .map((item) => {
+      return (
+        <MediaItem
+          key={`${item.name}-${item.year}`}
+          title={item.title}
+          year={item.year}
+          poster={item.poster}
+          genre={item.genre}
+          type={item.type}
+        />
+      );
+    });
 
   return (
     // <>
