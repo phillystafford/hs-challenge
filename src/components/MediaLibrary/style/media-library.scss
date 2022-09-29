@@ -1,0 +1,8 @@
+.media-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 10px;
+}
+
+// TODO: come back and do this https://css-tricks.com/zooming-images-in-a-grid-layout/
