@@ -1,0 +1,92 @@
+// .blurb::before {
+//   content: '\275D';
+
+//   font-size: 50px;
+
+//   left: 8px;
+//   top: 10px;
+//   margin: 20px;
+//   padding: 20px;
+// }
+
+// .blurb__container {
+//   background-color: #f9f8f8;
+
+//   margin-left: 20px;
+//   padding: 10px 20px;
+//   border-left: 2px solid #fd6d00;
+// }
+
+// .blurb {
+//   border-radius: 50%;
+//   background-color: #c7dbc1;
+//   border: 4px solid #47962f;
+//   width: 25px;
+//   height: 25px;
+//   margin: 30px 0 0 40px;
+//   display: block;
+//   position: relative;
+// }
+// .blurb:before {
+//   content: '\275D';
+//   position: absolute;
+//   white-space: pre;
+//   display: inline;
+//   top: 0;
+//   left: 50%;
+//   transform: translate(-50%, -25px);
+// }
+
+.blurb__container {
+  // display: flex;
+  // @media (min-width: 320px) and (max-width: 1023px) {
+  //   display: none;
+  // }
+  margin: 0 20px;
+  @media (min-width: 640px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-width: 1023px) {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+.blurb__description {
+  font-size: 20px;
+  font-weight: 300;
+  color: #545454;
+  // max-width: 300px;
+
+  @media (min-width: 640px) {
+    margin-right: 20px;
+  }
+}
+
+.blurb__author {
+  font-size: 14px;
+  font-weight: 500;
+  color: #545454;
+  margin-top: 35px;
+  display: block;
+}
+
+.blurb__cta {
+  color: #fff;
+  background-color: #11a3e2;
+  padding: 20px;
+  max-height: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 120px;
+  max-width: 120px;
+  text-align: center;
+  display: block;
+  margin: 35px auto 0;
+  @media (min-width: 640px) {
+    margin: 0 0 0 30px;
+  }
+}

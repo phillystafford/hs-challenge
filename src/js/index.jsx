@@ -1,13 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
+
 import 'normalize.css';
 import '../styles/base/index.scss';
 
 import ExercisePage from '../components/ExercisePage/ExercisePage';
 
-// ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'));
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ExercisePage />
@@ -25,3 +24,5 @@ root.render(
 // TODO: Assume the the Tell Me more CTA is a link directing to another page
 
 // TODO: can't test against latest safari. I have 15.6.1
+
+// TODO: add tests
