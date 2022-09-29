@@ -61,7 +61,10 @@
   height: 10px;
   border-radius: 50%;
   background: #fd6d00;
-  mix-blend-mode: darken;
+
+  @media (min-width: 640px) {
+    bottom: -8px;
+  }
 }
 
 // tried to have 2 befores
@@ -97,14 +100,17 @@
   // @media (min-width: 320px) and (max-width: 1023px) {
   //   display: none;
   // }
+  display: flex;
+  flex-direction: column;
   position: relative;
   margin: 60px;
   // border-left: 2px solid #fd6d00;
 
   @media (min-width: 640px) {
-    display: flex;
+    // display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
+    flex-direction: row;
   }
   @media (min-width: 1023px) {
     max-width: 1024px;
@@ -130,14 +136,19 @@
 .blurb__description {
   font-size: 16px;
   font-weight: 300;
+  line-height: 1.4;
   color: #606060;
   // max-width: 300px;
   // padding: 20px;
   margin: 0;
   padding: 0 20px;
 
+  @media (min-width: 400px) {
+    font-size: 20px;
+  }
+
   @media (min-width: 640px) {
-    margin-right: 20px;
+    // margin-right: 20px;
   }
 }
 
@@ -157,16 +168,21 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 12px;
-  min-width: 120px;
+  min-width: 164px;
   text-align: center;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  margin: 35px 50px 0;
+  margin: 35px auto 0;
   border-radius: 4px;
+
+  @media (min-width: 400px) {
+    font-size: 14px;
+  }
   @media (min-width: 640px) {
-    margin: 0 0 0 30px;
+    margin: 0 0 0 10px;
     padding: 24px 0;
-    // stillneeded? max-height: 40px;
+    height: 16px;
+    min-width: 200px;
   }
 }
 
