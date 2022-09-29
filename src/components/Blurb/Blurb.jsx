@@ -26,4 +26,6 @@ function Blurb() {
 //   title: PropTypes.string.isRequired,
 // };
 
+// TODO: Make component reusable
+
 export default Blurb;
