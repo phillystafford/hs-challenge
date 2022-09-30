@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 import MediaItem from '../MediaItem/MediaItem';
 import Filter from '../Filter/Filter';
-import { genreList } from '../../utils/filterConfigs';
+import { genreList, yearList } from '../../utils/filterConfigs';
 
 function MediaLibrary() {
   const [mediaItems, setMediaItems] = useState(() => {
@@ -52,6 +52,7 @@ function MediaLibrary() {
           <div className="dropdown-filters">
             {/* <Filter config={genreList} /> */}
             <Filter type="genre" config={genreList} />
+            <Filter type="year" config={yearList} />
             {/* <Filter type="year" inputType="radio" /> */}
           </div>
           <div className="search-filter">

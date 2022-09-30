@@ -23,7 +23,7 @@ function FilterItem({ inputType, id, name, value, isChecked, onChange }) {
   //   );
 
   return (
-    <li className="genre-checkbox">
+    <li className={`filter-${inputType}`}>
       <input
         type={inputType}
         id={id}
@@ -47,3 +47,16 @@ FilterItem.propTypes = {
 };
 
 export default FilterItem;
+
+// const [checkedState, setCheckedState] = useState(
+//   new Array(config.length).fill(false)
+// );
+
+// console.log(`checkedGenreState -> ${JSON.stringify(checkedState)}`);
+// const handleOnChange = (position) => {
+//   const updatedCheckedState = checkedState.map((item, index) =>
+//     index === position ? !item : item
+//   );
+
+//   setCheckedState(updatedCheckedState);
+// };
