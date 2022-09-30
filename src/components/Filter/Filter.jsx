@@ -7,13 +7,22 @@ import FilterItem from '../FilterItem/FilterItem';
 // import { genreList } from '../../utils/filterConfigs';
 
 function Filter({ type, config }) {
-  const [checkedState, setCheckedState] = useState(
-    new Array(config.length).fill(false)
-  );
+  const [checkedState, setCheckedState] = useState(() => {
+    return new Array(config.length).fill(false);
+  });
+
+  const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(() => {
+    return false;
+  });
 
   console.log(`checkedState ${type} -> ${JSON.stringify(checkedState)}`);
+  console.log(`isFilterMenuOpen ${type} -> ${isFilterMenuOpen}`);
 
-  const handleOnChange = (position) => {
+  const handleIsFilterMenuOpenOnChange = () => {
+    setIsFilterMenuOpen(!isFilterMenuOpen);
+  };
+
+  const handleCheckedStateOnChange = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
       index === position ? !item : item
     );
@@ -23,8 +32,8 @@ function Filter({ type, config }) {
 
   return (
     <div className="filter__container">
-      <FilterButton type={type} />
-      {true && (
+      <FilterButton type={type} onChange={handleIsFilterMenuOpenOnChange} />
+      {isFilterMenuOpen && (
         <FilterList>
           {config.length > 0 &&
             config.map(({ name, inputType }, index) => {
@@ -36,7 +45,7 @@ function Filter({ type, config }) {
                   name={name}
                   value={name}
                   isChecked={checkedState[index]}
-                  onChange={() => handleOnChange(index)}
+                  onChange={() => handleCheckedStateOnChange(index)}
                 />
               );
             })}
