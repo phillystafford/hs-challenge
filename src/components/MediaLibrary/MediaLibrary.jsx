@@ -19,10 +19,10 @@ function MediaLibrary() {
 
   console.log(mediaItems);
 
-  const allMediaItems = mediaItems
+  const renderAllMediaItems = mediaItems
     .sort((a, b) => {
-      const nameA = a.title.toUpperCase(); // ignore upper and lowercase
-      const nameB = b.title.toUpperCase(); // ignore upper and lowercase
+      const nameA = a.title.toUpperCase();
+      const nameB = b.title.toUpperCase();
       if (nameA < nameB) {
         return -1;
       }
@@ -56,7 +56,7 @@ function MediaLibrary() {
       <div>search bar</div>
       <div>radio buttons</div>
       <div>clear filters</div> */}
-      <div className="media-container">{allMediaItems}</div>
+      <div className="media-container">{renderAllMediaItems}</div>
     </div>
   );
 }
