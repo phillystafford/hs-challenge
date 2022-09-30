@@ -7,7 +7,32 @@ import FilterItem from '../FilterItem/FilterItem';
 // import { genreList } from '../../utils/filterConfigs';
 
 function Filter({ type, config }) {
-  console.log(`filter config -> ${JSON.stringify(config)}`);
+  const [checkedState, setCheckedState] = useState(
+    new Array(config.length).fill(false)
+  );
+
+  console.log(`checkedGenreState -> ${JSON.stringify(checkedState)}`);
+  const handleOnChange = (position) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setCheckedState(updatedCheckedState);
+
+    // const totalPrice = updatedCheckedState.reduce(
+    //   (sum, currentState, index) => {
+    //     if (currentState === true) {
+    //       return sum + toppings[index].price;
+    //     }
+    //     return sum;
+    //   },
+    //   0
+    // );
+
+    // setTotal(totalPrice);
+  };
+
+  // console.log(`filter config -> ${JSON.stringify(config)}`);
   const renderGenreFilters = config.map(({ name, inputType }, index) => {
     return (
       <FilterItem
@@ -16,8 +41,8 @@ function Filter({ type, config }) {
         id={`${type}-checkbox-${index}`}
         name={name}
         value={name}
-        // checked={checkedGenreState[index]}
-        // onChange={() => handleOnChange(index)}
+        isChecked={checkedState[index]}
+        onChange={() => handleOnChange(index)}
       />
     );
   });
@@ -41,27 +66,6 @@ Filter.propTypes = {
 };
 
 export default Filter;
-
-// const [checkedGenreState, setCheckedGenreState] = useState(
-//     new Array(genreList.length).fill(false)
-//   );
-
-//   const handleOnChange = (position) => {
-//     const updatedCheckedGenreState = checkedGenreState.map((item, index) =>
-//       index === position ? !item : item
-//     );
-
-//     setCheckedGenreState(updatedCheckedGenreState);
-
-//     // const totalPrice = updatedCheckedState.reduce(
-//     //   (sum, currentState, index) => {
-//     //     if (currentState === true) {
-//     //       return sum + toppings[index].price;
-//     //     }
-//     //     return sum;
-//     //   },
-//     //   0
-//     // );
 
 //   // console.log(`genreList -> ${JSON.stringify(genreList)}`);
 //     // console.log(`checkedGenreState -> ${JSON.stringify(checkedGenreState)}`);

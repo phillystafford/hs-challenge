@@ -1,7 +1,8 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-function FilterItem({ inputType, id, name, value }) {
+function FilterItem({ inputType, id, name, value, isChecked, onChange }) {
+  // console.log(`isChecked in component -> ${isChecked)}`);
   // console.log(`config -> ${JSON.stringify(config)}`);
   // const inputComponent =
   //   inputType === 'text' ? (
@@ -28,18 +29,21 @@ function FilterItem({ inputType, id, name, value }) {
         id={id}
         name={name}
         value={value}
-        // checked={isChecked}
+        checked={isChecked}
+        onChange={onChange}
       />
-
-      {/* <label htmlFor={inputType}>{inputType.toString()}</label> */}
       <label htmlFor={name}>{name}</label>
     </li>
   );
 }
 
-// FilterItem.propTypes = {
-//   config: PropTypes.array.isRequired,
-//   isChecked: PropTypes.bool,
-// };
+FilterItem.propTypes = {
+  inputType: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  isChecked: PropTypes.bool,
+  onChange: PropTypes.func,
+};
 
 export default FilterItem;

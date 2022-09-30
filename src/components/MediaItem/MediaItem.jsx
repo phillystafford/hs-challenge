@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function MediaItem({ title, year, poster, genre, type }) {
-  console.log('in MediaItem');
+  // console.log('in MediaItem');
   return (
     <div className="media-item__container">
       {/* TODO: allow for no image */}
