@@ -1,0 +1,10 @@
+.filter-list__container {
+  border: 1px solid red;
+  display: inline-flex;
+  flex-direction: column;
+}
+.filter-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}

@@ -6,6 +6,7 @@ function MediaItem({ title, year, poster, genre, type }) {
   console.log('in MediaItem');
   return (
     <div className="media-item__container">
+      {/* TODO: allow for no image */}
       <img className="media-item__poster" src={poster} />
       <div className="media-item__title">
         {title} ({year})

@@ -1,10 +1,45 @@
-.media-container {
+.filters-container {
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr;
+  // grid-gap: 20px;
+  padding: 20px;
+  border: 1px solid #e3e4e3;
+  margin: 30px 30px 0 30px;
+}
+.media-item-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   padding: 20px;
   border: 1px solid #e3e4e3;
-  margin: 30px;
+  margin: 0 30px 30px;
 }
 
 // TODO: come back and do this https://css-tricks.com/zooming-images-in-a-grid-layout/
+
+// TODO: come back and do the chevron. css below for it
+// .chevron {
+//   position: relative;
+//   display: block;
+//   height: 50px; /*height should be double border*/
+// }
+
+// .chevron::before,
+// .chevron::after {
+//   position: absolute;
+//   display: block;
+//   content: '';
+//   border: 15px solid transparent; /*adjust size*/
+// }
+
+// /* Replace all text `top` below with left/right/bottom to rotate the chevron */
+
+// .chevron::before {
+//   top: 0;
+//   border-top-color: #b00; /*Chevron Color*/
+// }
+
+// .chevron::after {
+//   top: -10px; /*adjust thickness*/
+//   border-top-color: #fff; /*Match background colour*/
+// }
