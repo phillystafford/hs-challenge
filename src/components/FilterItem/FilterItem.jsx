@@ -1,29 +1,45 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
-function FilterItem({ inputType, isChecked }) {
-  const inputComponent =
-    inputType === 'text' ? (
-      <input type={inputType} id={inputType} name={inputType} />
-    ) : (
-      <>
-        <input
-          type={inputType}
-          id={name}
-          name={name}
-          value={name}
-          checked={isChecked}
-        />
-        <label htmlFor={inputType}>{inputType.toString()}</label>
-      </>
-    );
+function FilterItem({ inputType, id, name, value }) {
+  // console.log(`config -> ${JSON.stringify(config)}`);
+  // const inputComponent =
+  //   inputType === 'text' ? (
+  //     <input type={inputType} id={inputType} name={inputType} />
+  //   ) : (
+  //     <>
+  //       <input
+  //         type={inputType}
+  //         id={name}
+  //         name={name}
+  //         value={name}
+  //         checked={isChecked}
+  //       />
 
-  return <li className="genre-checkbox">{inputComponent}</li>;
+  //       {/* <label htmlFor={inputType}>{inputType.toString()}</label> */}
+  //       <label htmlFor={inputType}>{inputType}</label>
+  //     </>
+  //   );
+
+  return (
+    <li className="genre-checkbox">
+      <input
+        type={inputType}
+        id={id}
+        name={name}
+        value={value}
+        // checked={isChecked}
+      />
+
+      {/* <label htmlFor={inputType}>{inputType.toString()}</label> */}
+      <label htmlFor={name}>{name}</label>
+    </li>
+  );
 }
 
-FilterItem.propTypes = {
-  inputType: PropTypes.string.isRequired,
-  isChecked: PropTypes.bool,
-};
+// FilterItem.propTypes = {
+//   config: PropTypes.array.isRequired,
+//   isChecked: PropTypes.bool,
+// };
 
 export default FilterItem;

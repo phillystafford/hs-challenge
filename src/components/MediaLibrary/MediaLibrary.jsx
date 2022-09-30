@@ -52,7 +52,7 @@ function MediaLibrary() {
           <div className="dropdown-filters">
             {/* <Filter config={genreList} /> */}
             <Filter type="genre" config={genreList} />
-            <Filter type="year" inputType="radio" />
+            {/* <Filter type="year" inputType="radio" /> */}
           </div>
           <div className="search-filter">
             <input type="text" className="" placeholder="Search" />

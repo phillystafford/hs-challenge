@@ -7,12 +7,29 @@ import FilterItem from '../FilterItem/FilterItem';
 // import { genreList } from '../../utils/filterConfigs';
 
 function Filter({ type, config }) {
+  console.log(`filter config -> ${JSON.stringify(config)}`);
+  const renderGenreFilters = config.map(({ name, inputType }, index) => {
+    return (
+      <FilterItem
+        key={index}
+        inputType={inputType}
+        id={`${type}-checkbox-${index}`}
+        name={name}
+        value={name}
+        // checked={checkedGenreState[index]}
+        // onChange={() => handleOnChange(index)}
+      />
+    );
+  });
+
   return (
-    <div className="genre-filter__container">
+    <div className="filter__container">
       <FilterButton type={type} />
       <FilterList>
-        {/* { renderGenreFilters } */}
-        <FilterItem inputType="checkbox" checked />
+        {config.length && renderGenreFilters}
+        {/* <FilterItem config={config} /> */}
+        {/* <FilterItem inputType="checkbox" checked /> */}
+        {/* <FilterItem config={config} /> */}
       </FilterList>
     </div>
   );
@@ -20,7 +37,7 @@ function Filter({ type, config }) {
 
 Filter.propTypes = {
   type: PropTypes.string.isRequired,
-  // inputType: PropTypes.string.isRequired,
+  config: PropTypes.array.isRequired,
 };
 
 export default Filter;
