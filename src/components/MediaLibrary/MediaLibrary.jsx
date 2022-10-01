@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import MediaItem from '../MediaItem/MediaItem';
 import Filter from '../Filter/Filter';
 import RadioFilter from '../RadioFilter/RadioFilter';
+import SearchBox from '../SearchBox/SearchBox';
 import { genreList, yearList, formatTypeList } from '../../utils/filterConfigs';
 
 function MediaLibrary() {
@@ -18,6 +19,9 @@ function MediaLibrary() {
   });
   const [filteredFormatTypeItems, setFilteredFormatTypeItems] = useState(() => {
     return [];
+  });
+  const [inputValue, setInputValue] = useState(() => {
+    return '';
   });
 
   const [checkedGenreState, setCheckedGenreState] = useState(() => {
@@ -187,6 +191,10 @@ function MediaLibrary() {
     // };
   };
 
+  const handleOnChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
   // const handleCheckedYearStateOnChange = (position) => {
   //   const updatedCheckedYearState = checkedYearState.map((item, index) =>
   //     index === position ? !item : item
@@ -265,10 +273,29 @@ function MediaLibrary() {
     }
   };
 
+  const isTextFilterActive = () => {
+    // console.log('🚀 renderThisData', renderThisData);
+    if (inputValue.length > 0) {
+      renderThisData = mediaItems.filter((item) => {
+        console.log('🚀 inputValue', inputValue);
+        console.log('🚀 inputValue', item.title);
+
+        console.log(
+          '🚀 ~ inputValue.includes(item.title)',
+          inputValue.includes(item.title)
+        );
+        const lowerCaseInputValue = inputValue.toLowerCase();
+        return item.title.toLowerCase().includes(lowerCaseInputValue);
+      });
+    }
+  };
+  // console.log('🚀 Hitting? isTextFilterActive', isTextFilterActive);
+
   isGenreFilterActive();
   isYearFilterActive();
   // debugger;
   isRadioFilterActive();
+  isTextFilterActive();
 
   // console.log('🚀 CHECKEDGENRESTATE ->', checkedGenreState);
   // console.log('🚀 FILTEREDGENREITEMS ->', filteredGenreItems);
@@ -304,9 +331,7 @@ function MediaLibrary() {
             />
             {/* <Filter type="year" inputType="radio" /> */}
           </div>
-          <div className="search-filter">
-            <input type="text" className="" placeholder="Search" />
-          </div>
+          <SearchBox inputValue={inputValue} handleOnChange={handleOnChange} />
         </div>
 
         {/* <div>
