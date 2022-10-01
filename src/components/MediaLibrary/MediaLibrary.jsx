@@ -119,10 +119,10 @@ function MediaLibrary() {
     //   filteredFormatTypeItems
     // );
     // console.log('🚀🚀🚀🚀🚀🚀 ~ MEDIAITEMS', mediaItems);
-    console.log(
-      '🚀🚀🚀🚀🚀🚀 ~ CHECKEDFORMATTYPESTATE',
-      checkedFormatTypeState
-    );
+    // console.log(
+    //   '🚀🚀🚀🚀🚀🚀 ~ CHECKEDFORMATTYPESTATE',
+    //   checkedFormatTypeState
+    // );
   }, [
     // mediaItems,
     // filteredGenreItems,
@@ -223,22 +223,52 @@ function MediaLibrary() {
 
   const isRadioFilterActive = () => {
     if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
+      // console.log('IN IF');
+      // console.log('IN IF - mediaItems.length ->', mediaItems.length);
+      // console.log('IN IF - checkedFormatTypeState ->', checkedFormatTypeState);
       debugger;
-      radioFilterData = mediaItems.filter((item) => {
+      let formatTypeToDisplay = checkedFormatTypeState.filter((item) => {
         // console.log(
-        //   '🚀 ~ file: MediaLibrary.jsx ~ line 177 ~ radioFilterData=mediaItems.filter ~ item',
+        //   '🚀 ~ file: MediaLibrary.jsx ~ line 231 ~ formatTypeToDisplay ~ item',
         //   item
         // );
-
-        return filteredFormatTypeItems.find(item.name);
+        // console.log('🚀 ~ item.isChecked === true', item.isChecked === true);
+        return item.isChecked === true;
       });
+
+      // trim the plural s from movies or books
+      // formatTypeToDisplay[0].value = formatTypeToDisplay[0].value.slice(0, -1);
+
+      // console.log('IN IF - formatTypeToDisplay ->', formatTypeToDisplay);
+      // console.log(
+      //   'IN IF - formatTypeToDisplay.value ->',
+      //   formatTypeToDisplay[0].value
+      // );
+      debugger;
+      renderThisData = mediaItems.filter((item) => {
+        // console.log('🚀 ~ item', item.type);
+        // console.log(
+        //   '🚀 ~ formatTypeToDisplay[0].value === item.type',
+        //   formatTypeToDisplay[0].value === item.type
+        // );
+        // console.log(
+        //   '🚀 ~ formatTypeToDisplay.value',
+        //   formatTypeToDisplay[0].value
+        // );
+
+        // filteredYearItems.includes(item.year);
+        return formatTypeToDisplay[0].value.includes(item.type);
+        // return formatTypeToDisplay[0].value === item.type;
+      });
+
+      console.log('IN IF - RENDERTHISDATA ->', renderThisData);
     }
   };
 
   isGenreFilterActive();
   isYearFilterActive();
-  debugger;
-  // isRadioFilterActive();
+  // debugger;
+  isRadioFilterActive();
 
   // console.log('🚀 CHECKEDGENRESTATE ->', checkedGenreState);
   // console.log('🚀 FILTEREDGENREITEMS ->', filteredGenreItems);
@@ -289,8 +319,10 @@ function MediaLibrary() {
           <div>clear filters</div>
         </div> */}
       </div>
-      {mediaItems && (
+      {true && (
         <div className="media-item-container">
+          {/* <pre>{renderThisData}</pre> */}
+          {/* <pre>renderThisData -> {JSON.stringify(renderThisData)}</pre> */}
           {renderThisData && renderThisData.length > 0 ? (
             renderThisData.map((item, index) => {
               return (
