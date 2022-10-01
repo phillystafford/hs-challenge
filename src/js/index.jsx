@@ -26,3 +26,4 @@ root.render(
 // TODO: can't test against latest safari. I have 15.6.1
 
 // TODO: add tests
+// TODO: add web vitals

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 import MediaItem from '../MediaItem/MediaItem';
 import Filter from '../Filter/Filter';
-import { genreList, yearList } from '../../utils/filterConfigs';
+import RadioFilter from '../RadioFilter/RadioFilter';
+import { genreList, yearList, formatTypeList } from '../../utils/filterConfigs';
 
 function MediaLibrary() {
+  // TODO: add the word State to all the state functions
   const [mediaItems, setMediaItems] = useState(() => {
     return [];
   });
@@ -12,6 +14,9 @@ function MediaLibrary() {
     return [];
   });
   const [filteredYearItems, setFilteredYearItems] = useState(() => {
+    return [];
+  });
+  const [filteredFormatTypeItems, setFilteredFormatTypeItems] = useState(() => {
     return [];
   });
 
@@ -25,6 +30,13 @@ function MediaLibrary() {
   const [checkedYearState, setCheckedYearState] = useState(() => {
     // TODO: try to use name of item as key. i.e. {action: false}
     return yearList.map((item) => {
+      return { value: item.name, isChecked: false };
+    });
+  });
+
+  const [checkedFormatTypeState, setCheckedFormatTypeState] = useState(() => {
+    // TODO: try to use name of item as key. i.e. {action: false}
+    return formatTypeList.map((item) => {
       return { value: item.name, isChecked: false };
     });
   });
@@ -77,16 +89,50 @@ function MediaLibrary() {
   }, [checkedYearState]);
 
   useEffect(() => {
-    console.log(
-      '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredGenreItems',
-      filteredGenreItems
-    );
-    console.log(
-      '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredYearItems',
-      filteredYearItems
-    );
-  }, [filteredGenreItems, filteredYearItems]);
+    // console.log(
+    //   '🚀🚀🚀🚀🚀🚀 ~ checkedFormatTypeState',
+    //   checkedFormatTypeState
+    // );
+    debugger;
+    const filteredFormatTypeState = checkedFormatTypeState
+      .map((checkedFormatType) => {
+        if (checkedFormatType.isChecked) {
+          return checkedFormatType.value;
+        }
+      })
+      .filter((formatType) => formatType);
 
+    setFilteredFormatTypeItems(filteredFormatTypeState);
+  }, [checkedFormatTypeState]);
+
+  useEffect(() => {
+    // console.log(
+    //   '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredGenreItems',
+    //   filteredGenreItems
+    // );
+    // console.log(
+    //   '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredYearItems',
+    //   filteredYearItems
+    // );
+    // console.log(
+    //   '🚀🚀🚀🚀🚀🚀 ~ filteredFormatTypeItems',
+    //   filteredFormatTypeItems
+    // );
+    // console.log('🚀🚀🚀🚀🚀🚀 ~ MEDIAITEMS', mediaItems);
+    console.log(
+      '🚀🚀🚀🚀🚀🚀 ~ CHECKEDFORMATTYPESTATE',
+      checkedFormatTypeState
+    );
+  }, [
+    // mediaItems,
+    // filteredGenreItems,
+    // filteredYearItems,
+    // filteredFormatTypeItems,
+    checkedFormatTypeState,
+    checkedFormatTypeState,
+  ]);
+
+  // TODO: change name of checkedStateValue parameter
   const handleCheckedGenreStateOnChange = (checkedStateValue) => {
     const updatedCheckedGenreState = checkedGenreState.map((item) => {
       return checkedStateValue.value === item.value
@@ -97,6 +143,7 @@ function MediaLibrary() {
     setCheckedGenreState(updatedCheckedGenreState);
   };
 
+  // TODO: change name of checkedStateValue parameter
   const handleCheckedYearStateOnChange = (checkedStateValue) => {
     const updatedCheckedYearState = checkedYearState.map((item) => {
       return checkedStateValue.value === item.value
@@ -107,6 +154,39 @@ function MediaLibrary() {
     setCheckedYearState(updatedCheckedYearState);
   };
 
+  // TODO: change name of checkedStateValue parameter
+  const handleCheckedFormatTypeStateOnChange = (formatType) => {
+    console.log(
+      '🚀 ~ file: MediaLibrary.jsx ~ line 158 ~ formatType',
+      formatType
+    );
+    debugger;
+    let updatedCheckedFormatTypeState;
+
+    if (formatType === 'movies') {
+      updatedCheckedFormatTypeState = [
+        { isChecked: true, value: 'movies' },
+        { isChecked: false, value: 'books' },
+      ];
+    } else if (formatType === 'books') {
+      updatedCheckedFormatTypeState = [
+        { isChecked: false, value: 'movies' },
+        { isChecked: true, value: 'books' },
+      ];
+    }
+
+    setCheckedFormatTypeState(updatedCheckedFormatTypeState);
+
+    // const updatedCheckedFormatTypeState = checkedFormatTypeState.map((item) => {
+    //   debugger;
+    //   return { isChecked: !item.isChecked, value: item.value };
+    // });
+    // const updatedCheckedFormatTypeState = {
+    //   isChecked: !checkedFormatTypeState.isChecked,
+    //   value: checkedFormatTypeState.value,
+    // };
+  };
+
   // const handleCheckedYearStateOnChange = (position) => {
   //   const updatedCheckedYearState = checkedYearState.map((item, index) =>
   //     index === position ? !item : item
@@ -114,6 +194,60 @@ function MediaLibrary() {
 
   //   setCheckedYearState(updatedCheckedYearState);
   // };
+
+  let renderThisData;
+
+  const isGenreFilterActive = () => {
+    // console.log('filteredGenreItems.length > 0', filteredGenreItems.length > 0);
+    if (filteredGenreItems.length > 0) {
+      renderThisData = mediaItems.filter((item) =>
+        item.genre.filter((item) => filteredGenreItems.includes(item))
+      );
+    } else {
+      renderThisData = mediaItems.slice();
+    }
+  };
+
+  const isYearFilterActive = () => {
+    // console.log('filteredGenreItems.length > 0', filteredYearItems.length > 0);
+    if (filteredYearItems.length > 0) {
+      renderThisData = mediaItems.filter((item) =>
+        filteredYearItems.includes(item.year)
+      );
+    } else {
+      renderThisData = mediaItems.slice();
+    }
+  };
+
+  let radioFilterData;
+
+  const isRadioFilterActive = () => {
+    if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
+      debugger;
+      radioFilterData = mediaItems.filter((item) => {
+        // console.log(
+        //   '🚀 ~ file: MediaLibrary.jsx ~ line 177 ~ radioFilterData=mediaItems.filter ~ item',
+        //   item
+        // );
+
+        return filteredFormatTypeItems.find(item.name);
+      });
+    }
+  };
+
+  isGenreFilterActive();
+  isYearFilterActive();
+  debugger;
+  // isRadioFilterActive();
+
+  // console.log('🚀 CHECKEDGENRESTATE ->', checkedGenreState);
+  // console.log('🚀 FILTEREDGENREITEMS ->', filteredGenreItems);
+
+  // console.log('🚀 CHECKEDYEARSTATE ->', checkedYearState);
+  // console.log('🚀 CHECKEDFORMATTYPESTATE ->', checkedFormatTypeState);
+  // console.log('🚀 CHECKEDFORMATTYPESTATE ->', checkedFormatTypeState);
+  // console.log('🚀 RENDERTHISDATA ->', renderThisData);
+  // console.log('🚀 RADIOFILTERDATA ->', radioFilterData);
 
   return (
     <div>
@@ -131,6 +265,12 @@ function MediaLibrary() {
               config={yearList}
               onChange={handleCheckedYearStateOnChange}
               checkedState={checkedYearState}
+            />
+            <RadioFilter
+              type="format-type"
+              config={formatTypeList}
+              onChange={handleCheckedFormatTypeStateOnChange}
+              checkedState={checkedFormatTypeState}
             />
             {/* <Filter type="year" inputType="radio" /> */}
           </div>
@@ -151,8 +291,8 @@ function MediaLibrary() {
       </div>
       {mediaItems && (
         <div className="media-item-container">
-          {mediaItems && mediaItems.length > 0 ? (
-            mediaItems.map((item, index) => {
+          {renderThisData && renderThisData.length > 0 ? (
+            renderThisData.map((item, index) => {
               return (
                 <MediaItem
                   key={index}
@@ -186,5 +326,6 @@ function MediaLibrary() {
 // TODO: Swing back for chevron caret
 // TODO: fix styling on title, year and genre's
 // TODO: nicer error handling
+// TODO: rename to media viewer or library viewer ?
 
 export default MediaLibrary;

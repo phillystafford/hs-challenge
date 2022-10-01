@@ -49,3 +49,64 @@ Filter.propTypes = {
 };
 
 export default Filter;
+
+// const isFilterActive = () => {
+//   if (filteredGenreItems.length > 0 || filteredYearItems.length > 0) {
+//     debugger;
+//     renderThisData = mediaItems.filter((item) => {
+//       // console.log('🚀 1st ITEM ->', item);
+//       item.genre.filter((item) => {
+//         // console.log('🚀 2nd ITEM ->', item);
+//         // console.log('🚀 FILTEREDGENREITEMS ->', filteredGenreItems);
+//         // console.log('🚀 FILTEREDGENREITEMS ->', filteredGenreItems);
+//         // console.log('🚀 ITEM ->', item);
+//         // console.log(
+//         //   `🚀 ${filteredGenreItems} === ${item} ->`,
+//         //   filteredGenreItems.includes(item)
+//         // );
+//         filteredGenreItems.includes(item);
+//       });
+//     });
+//   } else {
+//     console.log('NOT BOOM');
+//     renderThisData = mediaItems.slice();
+//   }
+// };
+
+// TODO: check why filtering isn't working properly
+// {
+//   mediaItems && (
+//     <div className="media-item-container">
+//       {true && true ? (
+//         mediaItems
+//           .filter((item) => {
+//             item.genre.filter((item) => {
+//               console.log(
+//                 `🚀 filteredGenreItems.includes(item)`,
+//                 filteredGenreItems,
+//                 '==='.item,
+//                 filteredGenreItems.includes(item)
+//               );
+//               filteredGenreItems.includes(item);
+//             });
+//           })
+//           .map((item, index) => {
+//             return (
+//               <MediaItem
+//                 key={index}
+//                 title={item.title}
+//                 year={item.year}
+//                 poster={item.poster}
+//                 genre={item.genre}
+//                 type={item.type}
+//               />
+//             );
+//           })
+//       ) : (
+//         <div>
+//           Ooops :( there seems to be a problem loading the media library
+//         </div>
+//       )}
+//     </div>
+//   );
+// }

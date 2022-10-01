@@ -59,3 +59,13 @@ export const yearList = [
     inputType: 'checkbox',
   },
 ];
+export const formatTypeList = [
+  {
+    name: 'movies',
+    inputType: 'radio',
+  },
+  {
+    name: 'books',
+    inputType: 'radio',
+  },
+];
