@@ -8,6 +8,9 @@ function MediaLibrary() {
   const [mediaItems, setMediaItems] = useState(() => {
     return [];
   });
+  const [filteredMediaItems, setFilteredMediaItems] = useState(() => {
+    return [];
+  });
 
   useEffect(() => {
     // TODO: move into an API utility file
@@ -18,32 +21,13 @@ function MediaLibrary() {
       .then((json) => setMediaItems(json.media));
   }, []);
 
-  const renderAllMediaItems = mediaItems
-    .sort((a, b) => {
-      const titleA = a.title.toUpperCase();
-      const titleB = b.title.toUpperCase();
-      if (titleA < titleB) {
-        return -1;
-      }
-      if (titleA > titleB) {
-        return 1;
-      }
+  // console.log(
+  //   `filteredMediaItems State -> ${JSON.stringify(filteredMediaItems, null, 2)}`
+  // );
 
-      // names must be equal
-      return 0;
-    })
-    .map((item, index) => {
-      return (
-        <MediaItem
-          key={index}
-          title={item.title}
-          year={item.year}
-          poster={item.poster}
-          genre={item.genre}
-          type={item.type}
-        />
-      );
-    });
+  const handleFilteredMediaItems = (searchParameters) => {
+    console.log(`MediaLibrary -> ${searchParameters}`);
+  };
 
   return (
     <div>
@@ -51,7 +35,11 @@ function MediaLibrary() {
         <div className="top-filters">
           <div className="dropdown-filters">
             {/* <Filter config={genreList} /> */}
-            <Filter type="genre" config={genreList} />
+            <Filter
+              type="genre"
+              config={genreList}
+              testFunc={handleFilteredMediaItems}
+            />
             <Filter type="year" config={yearList} />
             {/* <Filter type="year" inputType="radio" /> */}
           </div>
@@ -60,7 +48,7 @@ function MediaLibrary() {
           </div>
         </div>
 
-        <div>
+        {/* <div>
           <div>
             <input type="radio" id="html" name="fav_language" value="HTML" />
             <label htmlFor="html">HTML</label>
@@ -68,10 +56,41 @@ function MediaLibrary() {
             <label htmlFor="lmth">FOOD</label>
           </div>
           <div>clear filters</div>
-        </div>
+        </div> */}
       </div>
       {mediaItems && (
-        <div className="media-item-container">{renderAllMediaItems}</div>
+        <div className="media-item-container">
+          {mediaItems && mediaItems.length > 0 ? (
+            mediaItems
+              .sort((a, b) => {
+                const titleA = a.title.toUpperCase();
+                const titleB = b.title.toUpperCase();
+                if (titleA < titleB) {
+                  return -1;
+                }
+                if (titleA > titleB) {
+                  return 1;
+                }
+                return 0;
+              })
+              .map((item, index) => {
+                return (
+                  <MediaItem
+                    key={index}
+                    title={item.title}
+                    year={item.year}
+                    poster={item.poster}
+                    genre={item.genre}
+                    type={item.type}
+                  />
+                );
+              })
+          ) : (
+            <div>
+              Ooops :( there seems to be a problem loading the media library
+            </div>
+          )}
+        </div>
       )}
     </div>
   );
@@ -87,5 +106,6 @@ function MediaLibrary() {
 // TODO: mention I would have liked to setup storybook for dev purposes etc
 // TODO: Swing back for chevron caret
 // TODO: fix styling on title, year and genre's
+// TODO: nicer error handling
 
 export default MediaLibrary;

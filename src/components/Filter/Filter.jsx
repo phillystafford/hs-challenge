@@ -6,7 +6,7 @@ import FilterList from '../FilterList/FilterList';
 import FilterItem from '../FilterItem/FilterItem';
 // import { genreList } from '../../utils/filterConfigs';
 
-function Filter({ type, config }) {
+function Filter({ type, config, testFunc }) {
   const [checkedState, setCheckedState] = useState(() => {
     return new Array(config.length).fill(false);
   });
@@ -28,6 +28,7 @@ function Filter({ type, config }) {
     );
 
     setCheckedState(updatedCheckedState);
+    // testFunc(`JSON.stringify(checkedState) -> ${JSON.stringify(checkedState)}`);
   };
 
   return (
@@ -35,7 +36,9 @@ function Filter({ type, config }) {
       <FilterButton type={type} onChange={handleIsFilterMenuOpenOnChange} />
       {isFilterMenuOpen && (
         <FilterList>
-          {config.length > 0 &&
+          {/* TODO: error handling really needed here? */}
+          {config &&
+            config.length > 0 &&
             config.map(({ name, inputType }, index) => {
               return (
                 <FilterItem
@@ -58,6 +61,7 @@ function Filter({ type, config }) {
 Filter.propTypes = {
   type: PropTypes.string.isRequired,
   config: PropTypes.array.isRequired,
+  testFunc: PropTypes.func,
 };
 
 export default Filter;

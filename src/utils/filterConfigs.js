@@ -1,30 +1,30 @@
 export const genreList = [
   {
-    name: 'ACTION',
+    name: 'action',
     inputType: 'checkbox',
   },
   {
-    name: 'ADVENTURE',
+    name: 'adventure',
     inputType: 'checkbox',
   },
   {
-    name: 'ANIMATION',
+    name: 'animation',
     inputType: 'checkbox',
   },
   {
-    name: 'BIOGRAPHY',
+    name: 'biography',
     inputType: 'checkbox',
   },
   {
-    name: 'CLASSES',
+    name: 'classes',
     inputType: 'checkbox',
   },
   {
-    name: 'COMEDY',
+    name: 'comedy',
     inputType: 'checkbox',
   },
   {
-    name: 'CRIME',
+    name: 'crime',
     inputType: 'checkbox',
   },
 ];

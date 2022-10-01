@@ -32,7 +32,7 @@ function FilterItem({ inputType, id, name, value, isChecked, onChange }) {
         checked={isChecked}
         onChange={onChange}
       />
-      <label htmlFor={name}>{name}</label>
+      <label htmlFor={name}>{name.toUpperCase()}</label>
     </li>
   );
 }
