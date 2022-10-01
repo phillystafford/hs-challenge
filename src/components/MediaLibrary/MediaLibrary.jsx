@@ -57,12 +57,18 @@ function MediaLibrary() {
       .filter((genre) => genre);
 
     // TODO: I was here trying to get useEffect working when checkedGenreState is changed
-    // setFilteredMediaItems;
+    setFilteredGenreItems(filteredGenreState);
 
-    console.log(
-      `==========  filteredGenreState -> ${JSON.stringify(filteredGenreState)}`
-    );
+    // console.log(
+    //   `==========  filteredGenreState -> ${JSON.stringify(filteredGenreState)}`
+    // );
   }, [checkedGenreState]);
+
+  useEffect(() => {
+    console.log(
+      `==========  filteredGenreItems -> ${JSON.stringify(filteredGenreItems)}`
+    );
+  }, [filteredGenreItems]);
 
   const handleCheckedGenreStateOnChange = (checkedStateValue) => {
     console.log(
