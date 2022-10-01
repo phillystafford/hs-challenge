@@ -6,29 +6,20 @@ import FilterList from '../FilterList/FilterList';
 import FilterItem from '../FilterItem/FilterItem';
 // import { genreList } from '../../utils/filterConfigs';
 
-function Filter({ type, config, testFunc }) {
-  const [checkedState, setCheckedState] = useState(() => {
-    return new Array(config.length).fill(false);
-  });
+function Filter({ type, config, onChange, isChecked }) {
+  // const [checkedState, setCheckedState] = useState(() => {
+  //   return new Array(config.length).fill(false);
+  // });
 
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(() => {
     return false;
   });
 
-  console.log(`checkedState ${type} -> ${JSON.stringify(checkedState)}`);
-  console.log(`isFilterMenuOpen ${type} -> ${isFilterMenuOpen}`);
+  // console.log(`checkedState ${type} -> ${JSON.stringify(checkedState)}`);
+  // console.log(`isFilterMenuOpen ${type} -> ${isFilterMenuOpen}`);
 
   const handleIsFilterMenuOpenOnChange = () => {
     setIsFilterMenuOpen(!isFilterMenuOpen);
-  };
-
-  const handleCheckedStateOnChange = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-
-    setCheckedState(updatedCheckedState);
-    // testFunc(`JSON.stringify(checkedState) -> ${JSON.stringify(checkedState)}`);
   };
 
   return (
@@ -47,8 +38,8 @@ function Filter({ type, config, testFunc }) {
                   id={`${type}-checkbox-${index}`}
                   name={name}
                   value={name}
-                  isChecked={checkedState[index]}
-                  onChange={() => handleCheckedStateOnChange(index)}
+                  isChecked={isChecked[index]}
+                  onChange={() => onChange(index)}
                 />
               );
             })}
@@ -61,7 +52,8 @@ function Filter({ type, config, testFunc }) {
 Filter.propTypes = {
   type: PropTypes.string.isRequired,
   config: PropTypes.array.isRequired,
-  testFunc: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
+  isChecked: PropTypes.array.isRequired,
 };
 
 export default Filter;

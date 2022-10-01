@@ -12,6 +12,14 @@ function MediaLibrary() {
     return [];
   });
 
+  const [checkedGenreState, setCheckedGenreState] = useState(() => {
+    return new Array(genreList.length).fill(false);
+  });
+
+  const [checkedYearState, setCheckedYearState] = useState(() => {
+    return new Array(yearList.length).fill(false);
+  });
+
   useEffect(() => {
     // TODO: move into an API utility file
     fetch(
@@ -21,12 +29,26 @@ function MediaLibrary() {
       .then((json) => setMediaItems(json.media));
   }, []);
 
-  // console.log(
-  //   `filteredMediaItems State -> ${JSON.stringify(filteredMediaItems, null, 2)}`
-  // );
+  useEffect(() => {
+    console.log(`NEW LOG checkedGenreState -> ${checkedGenreState}`);
+  }, [checkedGenreState]);
 
-  const handleFilteredMediaItems = (searchParameters) => {
-    console.log(`MediaLibrary -> ${searchParameters}`);
+  const handleCheckedGenreStateOnChange = (position) => {
+    const updatedCheckedGenreState = checkedGenreState.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setCheckedGenreState(updatedCheckedGenreState);
+    // testFunc(`JSON.stringify(checkedState) -> ${JSON.stringify(checkedState)}`);
+  };
+
+  const handleCheckedYearStateOnChange = (position) => {
+    const updatedCheckedYearState = checkedYearState.map((item, index) =>
+      index === position ? !item : item
+    );
+
+    setCheckedYearState(updatedCheckedYearState);
+    // testFunc(`JSON.stringify(checkedState) -> ${JSON.stringify(checkedState)}`);
   };
 
   return (
@@ -38,9 +60,15 @@ function MediaLibrary() {
             <Filter
               type="genre"
               config={genreList}
-              testFunc={handleFilteredMediaItems}
+              onChange={handleCheckedGenreStateOnChange}
+              isChecked={checkedGenreState}
             />
-            <Filter type="year" config={yearList} />
+            <Filter
+              type="year"
+              config={yearList}
+              onChange={handleCheckedYearStateOnChange}
+              isChecked={checkedYearState}
+            />
             {/* <Filter type="year" inputType="radio" /> */}
           </div>
           <div className="search-filter">
