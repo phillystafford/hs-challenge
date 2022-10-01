@@ -6,7 +6,7 @@ import FilterList from '../FilterList/FilterList';
 import FilterItem from '../FilterItem/FilterItem';
 // import { genreList } from '../../utils/filterConfigs';
 
-function Filter({ type, config, onChange, isChecked }) {
+function Filter({ type, config, onChange, checkedState }) {
   // const [checkedState, setCheckedState] = useState(() => {
   //   return new Array(config.length).fill(false);
   // });
@@ -22,6 +22,11 @@ function Filter({ type, config, onChange, isChecked }) {
     setIsFilterMenuOpen(!isFilterMenuOpen);
   };
 
+  // console.log(
+  //   '🚀 ~ file: Filter.jsx ~ line 10 ~ Filter ~ isChecked[4], isChecked[4].value ->',
+  //   isChecked[4].isChecked,
+  //   isChecked[4].value
+  // );
   return (
     <div className="filter__container">
       <FilterButton type={type} onChange={handleIsFilterMenuOpenOnChange} />
@@ -31,6 +36,10 @@ function Filter({ type, config, onChange, isChecked }) {
           {config &&
             config.length > 0 &&
             config.map(({ name, inputType }, index) => {
+              console.log(
+                '🚀 ~ file: Filter.jsx ~ line 10 ~ Filter ~ checkedState[index]',
+                JSON.stringify(checkedState[index])
+              );
               return (
                 <FilterItem
                   key={index}
@@ -38,8 +47,8 @@ function Filter({ type, config, onChange, isChecked }) {
                   id={`${type}-checkbox-${index}`}
                   name={name}
                   value={name}
-                  isChecked={isChecked[index]}
-                  onChange={() => onChange(index)}
+                  isChecked={checkedState[index].isChecked}
+                  onChange={() => onChange(checkedState[index])}
                 />
               );
             })}
@@ -53,7 +62,7 @@ Filter.propTypes = {
   type: PropTypes.string.isRequired,
   config: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
-  isChecked: PropTypes.array.isRequired,
+  checkedState: PropTypes.array,
 };
 
 export default Filter;

@@ -8,12 +8,19 @@ function MediaLibrary() {
   const [mediaItems, setMediaItems] = useState(() => {
     return [];
   });
-  const [filteredMediaItems, setFilteredMediaItems] = useState(() => {
+  const [filteredGenreItems, setFilteredGenreItems] = useState(() => {
     return [];
   });
 
   const [checkedGenreState, setCheckedGenreState] = useState(() => {
-    return new Array(genreList.length).fill(false);
+    // return new Array(genreList.length).fill({ isChecked: false, value: '' });
+    // TODO: try to use name of item as key. i.e. {action: false}
+    return genreList.map((item) => {
+      return { value: item.name, isChecked: false };
+    });
+    // return genreList.map((item) => {
+    //   return { isChecked: false, value: item.name };
+    // });
   });
 
   const [checkedYearState, setCheckedYearState] = useState(() => {
@@ -30,12 +37,56 @@ function MediaLibrary() {
   }, []);
 
   useEffect(() => {
-    console.log(`NEW LOG checkedGenreState -> ${checkedGenreState}`);
+    // console.log(`NEW LOG checkedGenreState -> ${checkedGenreState}`);
+    console.log(
+      `RUNNING AFTER checkedGenreState -> ${JSON.stringify(checkedGenreState)}}`
+    );
+    const filteredGenreState = checkedGenreState
+      .map((checkedGenre, index) => {
+        // debugger;
+        if (checkedGenre.isChecked) {
+          // console.log(
+          //   `+++++++++++++++ checkedGenre -> ${JSON.stringify(
+          //     checkedGenre
+          //   )} , index -> ${index}`
+          // );
+          // console.log(`genreList[index].name -> ${genreList[index].name} `);
+          return checkedGenre.value;
+        }
+      })
+      .filter((genre) => genre);
+
+    // TODO: I was here trying to get useEffect working when checkedGenreState is changed
+    // setFilteredMediaItems;
+
+    console.log(
+      `==========  filteredGenreState -> ${JSON.stringify(filteredGenreState)}`
+    );
   }, [checkedGenreState]);
 
-  const handleCheckedGenreStateOnChange = (position) => {
-    const updatedCheckedGenreState = checkedGenreState.map((item, index) =>
-      index === position ? !item : item
+  const handleCheckedGenreStateOnChange = (checkedStateValue) => {
+    console.log(
+      '🚀 ~ file: MediaLibrary.jsx ~ line 55 ~ handleCheckedGenreStateOnChange ~ checkedStateValue',
+      checkedStateValue
+    );
+
+    // TODO: map: name passed in checkedStateValue and mark as true in new updated state
+
+    const updatedCheckedGenreState = checkedGenreState.map((item, index) => {
+      console.log(
+        '🚀 ~ file: MediaLibrary.jsx ~ line 54 ~ updatedCheckedGenreState ~ item, index',
+        item,
+        index
+      );
+      return checkedStateValue.value === item.value
+        ? { isChecked: !item.isChecked, value: item.value }
+        : { isChecked: item.isChecked, value: item.value };
+    });
+
+    console.log(
+      `########## updatedCheckedGenreState -> ${JSON.stringify(
+        updatedCheckedGenreState
+      )}`
     );
 
     setCheckedGenreState(updatedCheckedGenreState);
@@ -51,6 +102,10 @@ function MediaLibrary() {
     // testFunc(`JSON.stringify(checkedState) -> ${JSON.stringify(checkedState)}`);
   };
 
+  console.log(
+    `********** checkedGenreState -> ${JSON.stringify(checkedGenreState)}`
+  );
+
   return (
     <div>
       <div className="filters-container">
@@ -61,7 +116,7 @@ function MediaLibrary() {
               type="genre"
               config={genreList}
               onChange={handleCheckedGenreStateOnChange}
-              isChecked={checkedGenreState}
+              checkedState={checkedGenreState}
             />
             <Filter
               type="year"
@@ -137,3 +192,19 @@ function MediaLibrary() {
 // TODO: nicer error handling
 
 export default MediaLibrary;
+
+// const filteredGenreState = checkedGenreState.reduce(
+//   (result, checkedGenre, index) => {
+//     // debugger;
+//     if (checkedGenre.isChecked) {
+//       console.log(
+//         `+++++++++++++++ checkedGenre -> ${JSON.stringify(
+//           checkedGenre
+//         )} , index -> ${index}`
+//       );
+//       // console.log(`genreList[index].name -> ${genreList[index].name} `);
+//       result.push(checkedGenre.value);
+//     }
+//     return result;
+//   }
+// );
