@@ -230,28 +230,20 @@ function MediaLibrary() {
   //   }
   // };
   const isGenreFilterActive = () => {
-    debugger;
     console.log('filteredGenreItems', filteredGenreItems);
     if (filteredGenreItems.length > 0) {
       mediaItems.forEach((item, index) => {
-        // const findCommonElement = (array1, array2) => {
-        // Loop for array1
         for (let i = 0; i < item.genre.length; i++) {
-          // Loop for array2
           for (let j = 0; j < filteredGenreItems.length; j++) {
-            // Compare the element of each and
-            // every element from both of the
-            // arrays
             if (item.genre[i] === filteredGenreItems[j]) {
-              // Return if common element found
-
               renderThisData.push(mediaItems[index]);
             }
           }
         }
       });
-      // };
-    } // closing if
+    } else {
+      renderThisData = mediaItems.slice(0);
+    }
   };
 
   console.log('renderThisData -> ', renderThisData);
@@ -338,7 +330,7 @@ function MediaLibrary() {
   // isTextFilterActive();
 
   // const array1 = [1, 2, 2, 3, 3, 3, 1, 4];
-  // const uniq = () => [...new Set([1, 2, 2, 3, 3, 3, 1, 4])];
+  // const uniq = [...new Set([1, 2, 2, 3, 3, 3, 1, 4, 0])];
   // console.log('uniq -> ', uniq);
 
   // console.log('🚀 CHECKEDGENRESTATE ->', checkedGenreState);
@@ -349,6 +341,8 @@ function MediaLibrary() {
   // console.log('🚀 CHECKEDFORMATTYPESTATE ->', checkedFormatTypeState);
   // console.log('🚀 RENDERTHISDATA ->', renderThisData);
   // console.log('🚀 RADIOFILTERDATA ->', radioFilterData);
+
+  renderThisData = [...new Set(renderThisData)];
 
   return (
     <div>
