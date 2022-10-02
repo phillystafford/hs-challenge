@@ -220,7 +220,7 @@ function MediaLibrary() {
       );
     } else if (filteredYearItems.length > 0) {
       console.log('🚀 IN IF 2');
-      updatedFilteredMediaItems = filteredMediaItems.filter((item) =>
+      updatedFilteredMediaItems = mediaItems.filter((item) =>
         filteredYearItems.includes(item.year)
       );
     } else if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
@@ -234,7 +234,7 @@ function MediaLibrary() {
     } else if (searchBoxInputValue.length > 0) {
       console.log('🚀 IN IF 4');
       let tempListMatchingGenres = [];
-      updatedFilteredMediaItems = mediaItems.filter((item) => {
+      tempListMatchingGenres = mediaItems.filter((item) => {
         const lowerCaseInputValue = searchBoxInputValue.toLowerCase();
         return item.title.toLowerCase().includes(lowerCaseInputValue);
       });
