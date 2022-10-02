@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: explain difference between this and button
 function SearchBox({ inputValue, handleOnChange }) {
   return (
     <div className="search-box__container">

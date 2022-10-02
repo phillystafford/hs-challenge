@@ -23,6 +23,7 @@ function MediaLibrary() {
   const [filteredYearItems, setFilteredYearItems] = useState(() => {
     return [];
   });
+  // TODO: investigate why this isn't called
   const [filteredFormatTypeItems, setFilteredFormatTypeItems] = useState(() => {
     return [];
   });
