@@ -109,31 +109,39 @@ function MediaLibrary() {
   }, [checkedFormatTypeState]);
 
   useEffect(() => {
-    // console.log(
-    //   '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredGenreItems',
-    //   filteredGenreItems
-    // );
-    // console.log(
-    //   '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredYearItems',
-    //   filteredYearItems
-    // );
-    // console.log(
-    //   '🚀🚀🚀🚀🚀🚀 ~ filteredFormatTypeItems',
-    //   filteredFormatTypeItems
-    // );
-    // console.log('🚀🚀🚀🚀🚀🚀 ~ MEDIAITEMS', mediaItems);
-    console.log('🚀🚀🚀🚀🚀🚀 ~ FILTEREDMEDIAITEMS', filteredMediaItems);
-    setFilteredMediaItems(mediaItems);
-    console.log('🚀🚀🚀🚀🚀🚀 ~ FILTEREDMEDIAITEMS', filteredMediaItems);
+    console.log('🚀🚀🚀🚀🚀🚀 ~ BLEEEEDIN FIRED');
   }, [
-    // mediaItems,
-    // filteredGenreItems,
-    // filteredYearItems,
-    // filteredFormatTypeItems,
-    // checkedFormatTypeState,
-    // checkedFormatTypeState,
-    mediaItems,
+    searchBoxInputValue,
+    checkedGenreState,
+    checkedYearState,
+    checkedFormatTypeState,
   ]);
+  // useEffect(() => {
+  //   // console.log(
+  //   //   '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredGenreItems',
+  //   //   filteredGenreItems
+  //   // );
+  //   // console.log(
+  //   //   '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredYearItems',
+  //   //   filteredYearItems
+  //   // );
+  //   // console.log(
+  //   //   '🚀🚀🚀🚀🚀🚀 ~ filteredFormatTypeItems',
+  //   //   filteredFormatTypeItems
+  //   // );
+  //   // console.log('🚀🚀🚀🚀🚀🚀 ~ MEDIAITEMS', mediaItems);
+  //   console.log('🚀🚀🚀🚀🚀🚀 ~ FILTEREDMEDIAITEMS', filteredMediaItems);
+  //   setFilteredMediaItems(mediaItems);
+  //   console.log('🚀🚀🚀🚀🚀🚀 ~ FILTEREDMEDIAITEMS', filteredMediaItems);
+  // }, [
+  //   // mediaItems,
+  //   // filteredGenreItems,
+  //   // filteredYearItems,
+  //   // filteredFormatTypeItems,
+  //   // checkedFormatTypeState,
+  //   // checkedFormatTypeState,
+  //   mediaItems,
+  // ]);
 
   // TODO: change name of checkedStateValue parameter
   const handleCheckedGenreStateOnChange = (checkedStateValue) => {
