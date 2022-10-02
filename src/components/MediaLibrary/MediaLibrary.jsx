@@ -279,35 +279,36 @@ function MediaLibrary() {
   });
 
   return (
-    <div>
-      <div className="filters-container">
-        <div className="top-filters">
-          <div className="dropdown-filters">
-            <div>
-              <FilterDropdown
-                type="genre"
-                buttonText={`${
-                  filteredGenreItems.length > 0 ? filteredGenreItems.length : ''
-                } GENRE${filteredGenreItems.length === 1 ? '' : 'S'} V`}
-                config={genreList}
-                onChange={handleCheckedGenreStateOnChange}
-                checkedState={checkedGenreState}
-              />
-              <FilterDropdown
-                type="year"
-                buttonText={`${
-                  filteredYearItems.length > 0 ? filteredYearItems.length : ''
-                } YEAR${filteredYearItems.length === 1 ? '' : 'S'} V`}
-                config={yearList}
-                onChange={handleCheckedYearStateOnChange}
-                checkedState={checkedYearState}
-              />
-            </div>
-            <SearchBox
-              inputValue={searchBoxInputValue}
-              handleOnChange={handleOnChange}
+    <div className="exercise-2__container">
+      {/* <div className="filters-container"> */}
+      <div className="filter__container">
+        <div className="top-filter__container">
+          <div className="dropdown-filter__container">
+            <FilterDropdown
+              type="genre"
+              buttonText={`${
+                filteredGenreItems.length > 0 ? filteredGenreItems.length : ''
+              } GENRE${filteredGenreItems.length <= 1 ? '' : 'S'} V`}
+              config={genreList}
+              onChange={handleCheckedGenreStateOnChange}
+              checkedState={checkedGenreState}
+            />
+            <FilterDropdown
+              type="year"
+              buttonText={`${
+                filteredYearItems.length > 0 ? filteredYearItems.length : ''
+              } YEAR${filteredYearItems.length <= 1 ? '' : 'S'} V`}
+              config={yearList}
+              onChange={handleCheckedYearStateOnChange}
+              checkedState={checkedYearState}
             />
           </div>
+          <SearchBox
+            inputValue={searchBoxInputValue}
+            handleOnChange={handleOnChange}
+          />
+        </div>
+        <div className="bottom-filters">
           <RadioFilter
             type="format-type"
             config={formatTypeList}
@@ -321,6 +322,7 @@ function MediaLibrary() {
           />
         </div>
       </div>
+      {/* </div> */}
       <div className="media-item-container">
         {/* make this a double check for network error and no search results for filter combination */}
         {/* {mediaItems && displayData && displayData.length > 0 ? ( */}

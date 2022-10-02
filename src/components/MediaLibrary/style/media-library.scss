@@ -1,21 +1,35 @@
-.filters-container {
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
-  // grid-gap: 20px;
+.filter__container {
   padding: 20px;
-  border: 1px solid #e3e4e3;
+  border-top: 1px solid $exercise-2-border-colour;
+  border-right: 1px solid $exercise-2-border-colour;
+  border-left: 1px solid $exercise-2-border-colour;
   margin: 30px 30px 0 30px;
+  display: flex;
+  flex-direction: column;
 }
+
+.top-filter__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown-filter__container {
+  display: flex;
+  justify-content: flex-start;
+}
+
 .media-item-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   padding: 20px;
-  border: 1px solid #e3e4e3;
+  border: 1px solid $exercise-2-border-colour;
   margin: 0 30px 30px;
 }
 
 // TODO: come back and do this https://css-tricks.com/zooming-images-in-a-grid-layout/
+// TODO: screen quality was so bad that I had to look at an angle to spot styling differences
+// TODO: explain mixins and variables
 
 // TODO: come back and do the chevron. css below for it
 // .chevron {

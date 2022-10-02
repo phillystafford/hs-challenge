@@ -16,9 +16,9 @@ function FilterDropdown({ type, config, onChange, checkedState, buttonText }) {
   };
 
   return (
-    <div className="filter__container">
+    <>
       <FilterButton
-        className="filter"
+        className="dropdown-filter"
         buttonText={buttonText}
         handleOnClick={handleIsFilterMenuOpenOnChange}
       />
@@ -42,7 +42,7 @@ function FilterDropdown({ type, config, onChange, checkedState, buttonText }) {
             })}
         </FilterList>
       )}
-    </div>
+    </>
   );
 }
 

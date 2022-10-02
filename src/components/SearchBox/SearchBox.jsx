@@ -23,4 +23,5 @@ SearchBox.propTypes = {
   handleOnChange: PropTypes.func.isRequired,
 };
 
+// TODO: Add icons for down chevron, magnifying glass, checkboxes, and radio buttons? Or try change colour of default checkbox and radio buttons
 export default SearchBox;
