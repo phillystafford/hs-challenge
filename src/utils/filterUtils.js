@@ -1,3 +1,13 @@
+export const initialFilterItem = (value) => {
+  return {
+    value,
+    isChecked: false,
+  };
+};
+
+export const initialFilterBuilder = (filterList) =>
+  filterList.map((item) => initialFilterItem(item.name));
+
 export const genreList = [
   {
     name: 'action',

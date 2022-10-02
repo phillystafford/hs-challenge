@@ -4,7 +4,12 @@ import MediaItem from '../MediaItem/MediaItem';
 import Filter from '../Filter/Filter';
 import RadioFilter from '../RadioFilter/RadioFilter';
 import SearchBox from '../SearchBox/SearchBox';
-import { genreList, yearList, formatTypeList } from '../../utils/filterConfigs';
+import {
+  initialFilterBuilder,
+  genreList,
+  yearList,
+  formatTypeList,
+} from '../../utils/filterUtils';
 
 function MediaLibrary() {
   // TODO: add the word State to all the state functions
@@ -26,23 +31,17 @@ function MediaLibrary() {
 
   const [checkedGenreState, setCheckedGenreState] = useState(() => {
     // TODO: try to use name of item as key. i.e. {action: false}
-    return genreList.map((item) => {
-      return { value: item.name, isChecked: false };
-    });
+    return initialFilterBuilder(genreList);
   });
 
   const [checkedYearState, setCheckedYearState] = useState(() => {
     // TODO: try to use name of item as key. i.e. {action: false}
-    return yearList.map((item) => {
-      return { value: item.name, isChecked: false };
-    });
+    return initialFilterBuilder(yearList);
   });
 
   const [checkedFormatTypeState, setCheckedFormatTypeState] = useState(() => {
     // TODO: try to use name of item as key. i.e. {action: false}
-    return formatTypeList.map((item) => {
-      return { value: item.name, isChecked: false };
-    });
+    return initialFilterBuilder(formatTypeList);
   });
 
   useEffect(() => {
@@ -235,6 +234,13 @@ function MediaLibrary() {
     }
   };
 
+  const handleClearFilter = () => {
+    console.log('Clearing filters');
+    setCheckedGenreState(initialFilterBuilder(genreList));
+    setCheckedYearState(initialFilterBuilder(yearList));
+    setCheckedFormatTypeState(initialFilterBuilder(formatTypeList));
+  };
+
   //  TODO: prioritise the filters. Create a piece of filter state amd use that as a source of truth
   if (isGenreFilterActive) {
     applyGenreFilterActive();
@@ -304,7 +310,9 @@ function MediaLibrary() {
             onChange={handleCheckedFormatTypeStateOnChange}
             checkedState={checkedFormatTypeState}
           />
-          <button>Clear Filters Link</button>
+          <button onClick={handleClearFilter} className="clear">
+            Clear Filters Link
+          </button>
         </div>
       </div>
       <div className="media-item-container">
