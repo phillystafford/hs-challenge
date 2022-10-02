@@ -1,39 +1,49 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// TODO: Remove id
 function FilterItem({ inputType, id, name, value, isChecked, onChange }) {
-  // console.log(`isChecked in component -> ${isChecked)}`);
-  // console.log(`config -> ${JSON.stringify(config)}`);
-  // const inputComponent =
-  //   inputType === 'text' ? (
-  //     <input type={inputType} id={inputType} name={inputType} />
-  //   ) : (
-  //     <>
-  //       <input
-  //         type={inputType}
-  //         id={name}
-  //         name={name}
-  //         value={name}
-  //         checked={isChecked}
-  //       />
-
-  //       {/* <label htmlFor={inputType}>{inputType.toString()}</label> */}
-  //       <label htmlFor={inputType}>{inputType}</label>
-  //     </>
-  //   );
-
   return (
-    <li className={`filter-${inputType}`}>
-      <input
-        type={inputType}
-        id={id}
-        name={name}
-        value={value}
-        checked={isChecked}
-        onChange={onChange}
-      />
-      <label htmlFor={name}>{name.toUpperCase()}</label>
-    </li>
+    <>
+      <li className="filter-list__item">
+        <input
+          className="filter-list__input"
+          type={inputType}
+          id={id}
+          name={name}
+          value={value}
+          checked={isChecked}
+          onChange={onChange}
+        />
+        <label className="filter-list__label" htmlFor={id}>
+          {name.toUpperCase()}
+        </label>
+      </li>
+      {/* <div id="inputPreview">
+        <input
+          name="cssCheckbox"
+          id="demo_opt_1"
+          type="checkbox"
+          className="css-checkbox"
+        />
+        <label htmlFor="demo_opt_1">Option 1</label>
+        <input
+          name="cssCheckbox"
+          id="demo_opt_2"
+          type="checkbox"
+          className="css-checkbox"
+          checked=""
+        />
+        <label htmlFor="demo_opt_2">Option 2</label>
+        <input
+          name="cssCheckbox"
+          id="demo_opt_3"
+          type="checkbox"
+          className="css-checkbox"
+        />
+        <label htmlFor="demo_opt_3">Option 3</label>
+      </div> */}
+    </>
   );
 }
 
@@ -47,16 +57,3 @@ FilterItem.propTypes = {
 };
 
 export default FilterItem;
-
-// const [checkedState, setCheckedState] = useState(
-//   new Array(config.length).fill(false)
-// );
-
-// console.log(`checkedGenreState -> ${JSON.stringify(checkedState)}`);
-// const handleOnChange = (position) => {
-//   const updatedCheckedState = checkedState.map((item, index) =>
-//     index === position ? !item : item
-//   );
-
-//   setCheckedState(updatedCheckedState);
-// };

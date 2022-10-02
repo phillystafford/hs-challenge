@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const Button = ({ className, buttonText, handleOnClick }) => {
+export const Button = ({ type, className, buttonText, handleOnClick }) => {
   return (
-    <button onClick={handleOnClick} className={`${className}__button`}>
+    <button onClick={handleOnClick} className={`${className}__button--${type}`}>
       {buttonText}
     </button>
   );
@@ -15,6 +15,7 @@ export const Button = ({ className, buttonText, handleOnClick }) => {
 // TODO: Add icons for down chevron, magnifying glass, checkboxes, and radio buttons? Or try change colour of default checkbox and radio buttons
 
 Button.propTypes = {
+  type: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
   buttonText: PropTypes.string.isRequired,
   handleOnClick: PropTypes.func.isRequired,

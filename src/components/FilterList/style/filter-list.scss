@@ -1,10 +1,41 @@
-.filter-list__container {
-  border: 1px solid red;
-  display: inline-flex;
-  flex-direction: column;
+.filter-list__container--genre {
+  position: absolute;
+  bottom: -292px;
+
+  background-color: #ffffff;
+  border: v.$media-viewer-standard-border;
+  // display: inline-flex;
+  // flex-direction: column;
 }
-.filter-list {
+
+.filter-list__container--year {
+  position: absolute;
+  bottom: -292px;
+  left: 176px;
+
+  background-color: #ffffff;
+  border: v.$media-viewer-standard-border;
+  // display: inline-flex;
+  // flex-direction: column;
+}
+
+.filter-list__list--genre {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
+
+.filter-list__list--year {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-list__list--format-type {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+// TODO: try make responsive

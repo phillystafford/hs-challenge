@@ -1,3 +1,31 @@
-.filter-b {
-  background-color: #f9f9f9;
+.filter-dropdown__button--genre,
+.filter-dropdown__button--year {
+  color: v.$filter-text-colour;
+  background-color: v.$filter-background-colour;
+  border-bottom: 3px solid v.$filter-border-colour;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  min-width: 80px;
+  width: 120px;
+
+  font-weight: bold;
+  line-height: 2;
+  text-align: left;
+  // TODO: chnage to flex when icon is added
+  // display: inline-flex;
+  position: relative;
 }
+
+.filter-dropdown__button--year {
+  margin-left: 20px;
+}
+
+// border-color: rgba(0,0,0,0.9) transparent;
+//     border-width: 0 7px 7px 7px;
+//     border-top-width: 0px;
+//     border-right-width: 7px;
+//     border-bottom-width: 7px;
+//     border-left-width: 7px;
+//     left: 7px;
+//     top: -7px;

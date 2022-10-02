@@ -7,7 +7,7 @@ import FilterItem from '../FilterItem/FilterItem';
 function RadioFilter({ type, config, onChange, checkedState }) {
   return (
     <div className="radio-filter__container">
-      <FilterList>
+      <FilterList type={type}>
         {/* TODO: error handling really needed here? */}
         {config &&
           config.length > 0 &&

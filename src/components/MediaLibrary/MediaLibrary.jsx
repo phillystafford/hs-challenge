@@ -308,7 +308,7 @@ function MediaLibrary() {
             handleOnChange={handleOnChange}
           />
         </div>
-        <div className="bottom-filters">
+        <div className="top-filter__container">
           <RadioFilter
             type="format-type"
             config={formatTypeList}
@@ -323,7 +323,7 @@ function MediaLibrary() {
         </div>
       </div>
       {/* </div> */}
-      <div className="media-item-container">
+      <div className="media-view__container">
         {/* make this a double check for network error and no search results for filter combination */}
         {/* {mediaItems && displayData && displayData.length > 0 ? ( */}
         {mediaItems && displayData && displayData.length > 0 ? (

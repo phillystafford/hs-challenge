@@ -18,12 +18,14 @@ function FilterDropdown({ type, config, onChange, checkedState, buttonText }) {
   return (
     <>
       <FilterButton
-        className="dropdown-filter"
+        type={type}
+        className="filter-dropdown"
         buttonText={buttonText}
         handleOnClick={handleIsFilterMenuOpenOnChange}
       />
+      {/* TODO: only one open at a time. Fade in and out in styling */}
       {isFilterMenuOpen && (
-        <FilterList>
+        <FilterList type={type}>
           {/* TODO: error handling really needed here? */}
           {config &&
             config.length > 0 &&
