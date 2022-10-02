@@ -97,7 +97,7 @@ function MediaLibrary() {
     //   '🚀🚀🚀🚀🚀🚀 ~ checkedFormatTypeState',
     //   checkedFormatTypeState
     // );
-    debugger;
+    // debugger;
     const filteredFormatTypeState = checkedFormatTypeState
       .map((checkedFormatType) => {
         if (checkedFormatType.isChecked) {
@@ -164,7 +164,7 @@ function MediaLibrary() {
       '🚀 ~ file: MediaLibrary.jsx ~ line 158 ~ formatType',
       formatType
     );
-    debugger;
+    // debugger;
     let updatedCheckedFormatTypeState;
 
     if (formatType === 'movies') {
@@ -203,18 +203,58 @@ function MediaLibrary() {
   //   setCheckedYearState(updatedCheckedYearState);
   // };
 
-  let renderThisData;
+  let renderThisData = [];
 
+  // const isGenreFilterActive = () => {
+  //   debugger;
+  //   console.log('filteredGenreItems', filteredGenreItems);
+  //   if (filteredGenreItems.length > 0) {
+  //     mediaItems.forEach((item, index) => {
+  //       console.log('item -> ', item, ' - > index -> ', index);
+
+  //       if (index % 2 === 0) {
+  //         renderThisData.push(mediaItems[index]);
+  //       }
+  //     });
+
+  //     // renderThisData = mediaItems.filter((item) => {
+  //     //   return item.genre.filter((item) => {
+  //     //     return filteredGenreItems.includes(item);
+  //     //   });
+  //     // });
+  //   } else {
+  //     console.log(
+  //       '🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀'
+  //     );
+  //     // renderThisData = mediaItems.slice();
+  //   }
+  // };
   const isGenreFilterActive = () => {
-    // console.log('filteredGenreItems.length > 0', filteredGenreItems.length > 0);
+    debugger;
+    console.log('filteredGenreItems', filteredGenreItems);
     if (filteredGenreItems.length > 0) {
-      renderThisData = mediaItems.filter((item) =>
-        item.genre.filter((item) => filteredGenreItems.includes(item))
-      );
-    } else {
-      renderThisData = mediaItems.slice();
-    }
+      mediaItems.forEach((item, index) => {
+        // const findCommonElement = (array1, array2) => {
+        // Loop for array1
+        for (let i = 0; i < item.genre.length; i++) {
+          // Loop for array2
+          for (let j = 0; j < filteredGenreItems.length; j++) {
+            // Compare the element of each and
+            // every element from both of the
+            // arrays
+            if (item.genre[i] === filteredGenreItems[j]) {
+              // Return if common element found
+
+              renderThisData.push(mediaItems[index]);
+            }
+          }
+        }
+      });
+      // };
+    } // closing if
   };
+
+  console.log('renderThisData -> ', renderThisData);
 
   const isYearFilterActive = () => {
     // console.log('filteredGenreItems.length > 0', filteredYearItems.length > 0);
@@ -234,7 +274,7 @@ function MediaLibrary() {
       // console.log('IN IF');
       // console.log('IN IF - mediaItems.length ->', mediaItems.length);
       // console.log('IN IF - checkedFormatTypeState ->', checkedFormatTypeState);
-      debugger;
+      // debugger;
       let formatTypeToDisplay = checkedFormatTypeState.filter((item) => {
         // console.log(
         //   '🚀 ~ file: MediaLibrary.jsx ~ line 231 ~ formatTypeToDisplay ~ item',
@@ -252,7 +292,7 @@ function MediaLibrary() {
       //   'IN IF - formatTypeToDisplay.value ->',
       //   formatTypeToDisplay[0].value
       // );
-      debugger;
+      // debugger;
       renderThisData = mediaItems.filter((item) => {
         // console.log('🚀 ~ item', item.type);
         // console.log(
@@ -292,10 +332,14 @@ function MediaLibrary() {
   // console.log('🚀 Hitting? isTextFilterActive', isTextFilterActive);
 
   isGenreFilterActive();
-  isYearFilterActive();
+  // isYearFilterActive();
   // debugger;
-  isRadioFilterActive();
-  isTextFilterActive();
+  // isRadioFilterActive();
+  // isTextFilterActive();
+
+  // const array1 = [1, 2, 2, 3, 3, 3, 1, 4];
+  // const uniq = () => [...new Set([1, 2, 2, 3, 3, 3, 1, 4])];
+  // console.log('uniq -> ', uniq);
 
   // console.log('🚀 CHECKEDGENRESTATE ->', checkedGenreState);
   // console.log('🚀 FILTEREDGENREITEMS ->', filteredGenreItems);
@@ -311,38 +355,33 @@ function MediaLibrary() {
       <div className="filters-container">
         <div className="top-filters">
           <div className="dropdown-filters">
-            <Filter
-              type="genre"
-              config={genreList}
-              onChange={handleCheckedGenreStateOnChange}
-              checkedState={checkedGenreState}
+            <div>
+              <Filter
+                type="genre"
+                config={genreList}
+                onChange={handleCheckedGenreStateOnChange}
+                checkedState={checkedGenreState}
+              />
+              <Filter
+                type="year"
+                config={yearList}
+                onChange={handleCheckedYearStateOnChange}
+                checkedState={checkedYearState}
+              />
+            </div>
+            <SearchBox
+              inputValue={inputValue}
+              handleOnChange={handleOnChange}
             />
-            <Filter
-              type="year"
-              config={yearList}
-              onChange={handleCheckedYearStateOnChange}
-              checkedState={checkedYearState}
-            />
-            <RadioFilter
-              type="format-type"
-              config={formatTypeList}
-              onChange={handleCheckedFormatTypeStateOnChange}
-              checkedState={checkedFormatTypeState}
-            />
-            {/* <Filter type="year" inputType="radio" /> */}
           </div>
-          <SearchBox inputValue={inputValue} handleOnChange={handleOnChange} />
+          <RadioFilter
+            type="format-type"
+            config={formatTypeList}
+            onChange={handleCheckedFormatTypeStateOnChange}
+            checkedState={checkedFormatTypeState}
+          />
+          <button>Clear Filters Link</button>
         </div>
-
-        {/* <div>
-          <div>
-            <input type="radio" id="html" name="fav_language" value="HTML" />
-            <label htmlFor="html">HTML</label>
-            <input type="radio" id="lmth" name="fav_food" value="FOD" />
-            <label htmlFor="lmth">FOOD</label>
-          </div>
-          <div>clear filters</div>
-        </div> */}
       </div>
       {true && (
         <div className="media-item-container">
