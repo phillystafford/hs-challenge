@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import PropTypes from 'prop-types';
+
 import MediaItem from '../MediaItem/MediaItem';
 import Filter from '../Filter/Filter';
 import RadioFilter from '../RadioFilter/RadioFilter';
@@ -291,12 +291,18 @@ function MediaLibrary() {
             <div>
               <Filter
                 type="genre"
+                buttonText={`${
+                  filteredGenreItems.length > 0 ? filteredGenreItems.length : ''
+                } GENRE${filteredGenreItems.length === 1 ? '' : 'S'} V`}
                 config={genreList}
                 onChange={handleCheckedGenreStateOnChange}
                 checkedState={checkedGenreState}
               />
               <Filter
                 type="year"
+                buttonText={`${
+                  filteredYearItems.length > 0 ? filteredYearItems.length : ''
+                } YEAR${filteredYearItems.length === 1 ? '' : 'S'} V`}
                 config={yearList}
                 onChange={handleCheckedYearStateOnChange}
                 checkedState={checkedYearState}
@@ -315,7 +321,7 @@ function MediaLibrary() {
           />
           <ClearFilterButton
             className="clear-filters"
-            buttonText="Clear Filter"
+            buttonText="CLEAR FILTERS"
             handleOnClick={handleClearFilter}
           />
         </div>
@@ -344,11 +350,7 @@ function MediaLibrary() {
   );
 }
 
-// MediaLibrary.propTypes = {
-//   description: PropTypes.string.isRequired,
-//   author: PropTypes.string.isRequired,
-//   ctaText: PropTypes.string.isRequired,
-// };
+MediaLibrary.propTypes = {};
 
 // TODO: Use context to showcase skills
 // TODO: mention I would have liked to setup storybook for dev purposes etc

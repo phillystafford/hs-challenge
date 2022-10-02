@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import FilterButton from '../FilterButton/FilterButton';
+// import FilterButton from '../FilterButton/FilterButton';
+import { Button as FilterButton } from '..//Button/Button';
+
 import FilterList from '../FilterList/FilterList';
 import FilterItem from '../FilterItem/FilterItem';
 
-function Filter({ type, config, onChange, checkedState }) {
+function Filter({ type, config, onChange, checkedState, buttonText }) {
   const [isFilterMenuOpen, setIsFilterMenuOpen] = useState(() => {
     return false;
   });
@@ -16,7 +18,11 @@ function Filter({ type, config, onChange, checkedState }) {
 
   return (
     <div className="filter__container">
-      <FilterButton type={type} onChange={handleIsFilterMenuOpenOnChange} />
+      <FilterButton
+        className="filter"
+        buttonText={buttonText}
+        handleOnClick={handleIsFilterMenuOpenOnChange}
+      />
       {isFilterMenuOpen && (
         <FilterList>
           {/* TODO: error handling really needed here? */}
@@ -43,6 +49,7 @@ function Filter({ type, config, onChange, checkedState }) {
 
 Filter.propTypes = {
   type: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
   config: PropTypes.array.isRequired,
   onChange: PropTypes.func.isRequired,
   checkedState: PropTypes.array,
