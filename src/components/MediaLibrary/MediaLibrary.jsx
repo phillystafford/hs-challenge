@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import MediaItem from '../MediaItem/MediaItem';
-import Filter from '../Filter/Filter';
+import FilterDropdown from '../FilterDropdown/FilterDropdown';
 import RadioFilter from '../RadioFilter/RadioFilter';
 import SearchBox from '../SearchBox/SearchBox';
 import { Button as ClearFilterButton } from '..//Button/Button';
@@ -289,7 +289,7 @@ function MediaLibrary() {
         <div className="top-filters">
           <div className="dropdown-filters">
             <div>
-              <Filter
+              <FilterDropdown
                 type="genre"
                 buttonText={`${
                   filteredGenreItems.length > 0 ? filteredGenreItems.length : ''
@@ -298,7 +298,7 @@ function MediaLibrary() {
                 onChange={handleCheckedGenreStateOnChange}
                 checkedState={checkedGenreState}
               />
-              <Filter
+              <FilterDropdown
                 type="year"
                 buttonText={`${
                   filteredYearItems.length > 0 ? filteredYearItems.length : ''
