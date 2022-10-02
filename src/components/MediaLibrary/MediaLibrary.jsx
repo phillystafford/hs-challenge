@@ -17,6 +17,9 @@ function MediaLibrary() {
   const [mediaItems, setMediaItems] = useState(() => {
     return [];
   });
+  const [filteredMediaItems, setFilteredMediaItems] = useState(() => {
+    return [];
+  });
   const [filteredGenreItems, setFilteredGenreItems] = useState(() => {
     return [];
   });
@@ -119,24 +122,22 @@ function MediaLibrary() {
     //   filteredFormatTypeItems
     // );
     // console.log('🚀🚀🚀🚀🚀🚀 ~ MEDIAITEMS', mediaItems);
-    // console.log(
-    //   '🚀🚀🚀🚀🚀🚀 ~ CHECKEDFORMATTYPESTATE',
-    //   checkedFormatTypeState
-    // );
+    console.log('🚀🚀🚀🚀🚀🚀 ~ FILTEREDMEDIAITEMS', filteredMediaItems);
+    setFilteredMediaItems(mediaItems);
+    console.log('🚀🚀🚀🚀🚀🚀 ~ FILTEREDMEDIAITEMS', filteredMediaItems);
   }, [
     // mediaItems,
     // filteredGenreItems,
     // filteredYearItems,
     // filteredFormatTypeItems,
-    checkedFormatTypeState,
-    checkedFormatTypeState,
+    // checkedFormatTypeState,
+    // checkedFormatTypeState,
+    mediaItems,
   ]);
 
   // TODO: change name of checkedStateValue parameter
   const handleCheckedGenreStateOnChange = (checkedStateValue) => {
     const updatedCheckedGenreState = checkedGenreState.map((item) => {
-      console.log('dropdown state checks');
-
       return checkedStateValue.value === item.value
         ? { isChecked: !item.isChecked, value: item.value }
         : { isChecked: item.isChecked, value: item.value };
@@ -232,6 +233,8 @@ function MediaLibrary() {
       });
     }
   };
+
+  console.log('FILTEREDMEDIAITEMS -> '.filteredMediaItems);
 
   const handleClearFilter = () => {
     console.log('Clear Filters');
@@ -359,5 +362,6 @@ MediaLibrary.propTypes = {};
 // TODO: fix styling on title, year and genre's
 // TODO: nicer error handling
 // TODO: rename to media viewer or library viewer ?
+// TODO: create a new button for FilterDropdown because the other button can't be used because of how it's built
 
 export default MediaLibrary;
