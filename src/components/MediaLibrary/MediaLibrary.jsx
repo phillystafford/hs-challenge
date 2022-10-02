@@ -94,11 +94,6 @@ function MediaLibrary() {
   }, [checkedYearState]);
 
   useEffect(() => {
-    // console.log(
-    //   '🚀🚀🚀🚀🚀🚀 ~ checkedFormatTypeState',
-    //   checkedFormatTypeState
-    // );
-    // debugger;
     const filteredFormatTypeState = checkedFormatTypeState
       .map((checkedFormatType) => {
         if (checkedFormatType.isChecked) {
@@ -327,7 +322,9 @@ function MediaLibrary() {
         </div>
       </div>
       <div className="media-item-container">
-        {displayData && displayData.length > 0 ? (
+        {/* make this a double check for network error and no search results for filter combination */}
+        {/* {mediaItems && displayData && displayData.length > 0 ? ( */}
+        {mediaItems && displayData && displayData.length > 0 ? (
           displayData.map((item, index) => {
             return (
               <MediaItem
