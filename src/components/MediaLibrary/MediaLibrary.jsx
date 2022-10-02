@@ -4,6 +4,7 @@ import MediaItem from '../MediaItem/MediaItem';
 import Filter from '../Filter/Filter';
 import RadioFilter from '../RadioFilter/RadioFilter';
 import SearchBox from '../SearchBox/SearchBox';
+import { Button as ClearFilterButton } from '..//Button/Button';
 import {
   initialFilterBuilder,
   genreList,
@@ -25,7 +26,7 @@ function MediaLibrary() {
   const [filteredFormatTypeItems, setFilteredFormatTypeItems] = useState(() => {
     return [];
   });
-  const [inputValue, setInputValue] = useState(() => {
+  const [searchBoxInputValue, setSearchBoxInputValue] = useState(() => {
     return '';
   });
 
@@ -181,7 +182,7 @@ function MediaLibrary() {
   };
 
   const handleOnChange = (event) => {
-    setInputValue(event.target.value);
+    setSearchBoxInputValue(event.target.value);
   };
 
   let displayData = [];
@@ -224,21 +225,22 @@ function MediaLibrary() {
     }
   };
 
-  let isTextFilterActive = inputValue.length > 0;
+  let isTextFilterActive = searchBoxInputValue.length > 0;
   const applyTextFilter = () => {
-    if (inputValue.length > 0) {
+    if (searchBoxInputValue.length > 0) {
       displayData = mediaItems.filter((item) => {
-        const lowerCaseInputValue = inputValue.toLowerCase();
+        const lowerCaseInputValue = searchBoxInputValue.toLowerCase();
         return item.title.toLowerCase().includes(lowerCaseInputValue);
       });
     }
   };
 
   const handleClearFilter = () => {
-    console.log('Clearing filters');
+    console.log('Clear Filters');
     setCheckedGenreState(initialFilterBuilder(genreList));
     setCheckedYearState(initialFilterBuilder(yearList));
     setCheckedFormatTypeState(initialFilterBuilder(formatTypeList));
+    setSearchBoxInputValue('');
   };
 
   //  TODO: prioritise the filters. Create a piece of filter state amd use that as a source of truth
@@ -300,7 +302,7 @@ function MediaLibrary() {
               />
             </div>
             <SearchBox
-              inputValue={inputValue}
+              inputValue={searchBoxInputValue}
               handleOnChange={handleOnChange}
             />
           </div>
@@ -310,9 +312,11 @@ function MediaLibrary() {
             onChange={handleCheckedFormatTypeStateOnChange}
             checkedState={checkedFormatTypeState}
           />
-          <button onClick={handleClearFilter} className="clear">
-            Clear Filters Link
-          </button>
+          <ClearFilterButton
+            className="clear-filters"
+            buttonText="Clear Filter"
+            handleOnClick={handleClearFilter}
+          />
         </div>
       </div>
       <div className="media-item-container">
