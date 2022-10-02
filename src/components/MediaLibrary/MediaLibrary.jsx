@@ -109,39 +109,148 @@ function MediaLibrary() {
   }, [checkedFormatTypeState]);
 
   useEffect(() => {
-    console.log('🚀🚀🚀🚀🚀🚀 ~ BLEEEEDIN FIRED');
+    let updatedFilteredMediaItems = filteredMediaItems;
+
+    if (filteredGenreItems.length > 0) {
+      console.log('🚀 IN IF 1');
+      mediaItems.forEach((item, index) => {
+        for (let i = 0; i < item.genre.length; i++) {
+          for (let j = 0; j < filteredGenreItems.length; j++) {
+            if (item.genre[i] === filteredGenreItems[j]) {
+              updatedFilteredMediaItems.push(mediaItems[index]);
+            }
+          }
+        }
+      });
+    }
+
+    setFilteredMediaItems(
+      updatedFilteredMediaItems.sort((a, b) => {
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+        if (titleA < titleB) {
+          return -1;
+        }
+        if (titleA > titleB) {
+          return 1;
+        }
+        return 0;
+      })
+    );
+    console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
+  }, [checkedGenreState]);
+
+  useEffect(() => {
+    let updatedFilteredMediaItems = filteredMediaItems;
+
+    if (filteredYearItems.length > 0) {
+      console.log('🚀 IN IF 2');
+      updatedFilteredMediaItems = mediaItems.filter((item) =>
+        filteredYearItems.includes(item.year)
+      );
+    }
+
+    setFilteredMediaItems(
+      updatedFilteredMediaItems.sort((a, b) => {
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+        if (titleA < titleB) {
+          return -1;
+        }
+        if (titleA > titleB) {
+          return 1;
+        }
+        return 0;
+      })
+    );
+
+    console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
+  }, [checkedYearState]);
+
+  useEffect(() => {
+    let updatedFilteredMediaItems = filteredMediaItems;
+
+    if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
+      console.log('🚀 IN IF 3');
+      let formatTypeToDisplay = checkedFormatTypeState.filter((item) => {
+        return item.isChecked === true;
+      });
+      updatedFilteredMediaItems = mediaItems.filter((item) => {
+        return formatTypeToDisplay[0].value.includes(item.type);
+      });
+    }
+
+    setFilteredMediaItems(
+      updatedFilteredMediaItems.sort((a, b) => {
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+        if (titleA < titleB) {
+          return -1;
+        }
+        if (titleA > titleB) {
+          return 1;
+        }
+        return 0;
+      })
+    );
+
+    console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
+  }, [checkedFormatTypeState]);
+
+  useEffect(() => {
+    let updatedFilteredMediaItems = filteredMediaItems;
+
+    if (searchBoxInputValue.length > 0) {
+      console.log('🚀 IN IF 4');
+      updatedFilteredMediaItems = mediaItems.filter((item) => {
+        const lowerCaseInputValue = searchBoxInputValue.toLowerCase();
+        return item.title.toLowerCase().includes(lowerCaseInputValue);
+      });
+    }
+
+    setFilteredMediaItems(
+      updatedFilteredMediaItems.sort((a, b) => {
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+        if (titleA < titleB) {
+          return -1;
+        }
+        if (titleA > titleB) {
+          return 1;
+        }
+        return 0;
+      })
+    );
+
+    console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
+  }, [searchBoxInputValue]);
+
+  useEffect(() => {
+    // console.log(
+    //   '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredGenreItems',
+    //   filteredGenreItems
+    // );
+    // console.log(
+    //   '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredYearItems',
+    //   filteredYearItems
+    // );
+    // console.log(
+    //   '🚀🚀🚀🚀🚀🚀 ~ filteredFormatTypeItems',
+    //   filteredFormatTypeItems
+    // );
+    // console.log('🚀🚀🚀🚀🚀🚀 ~ MEDIAITEMS', mediaItems);
+    // console.log('🚀🚀🚀🚀🚀🚀 ~ FILTEREDMEDIAITEMS', filteredMediaItems);
+    setFilteredMediaItems(mediaItems);
+    // console.log('🚀🚀🚀🚀🚀🚀 ~ FILTEREDMEDIAITEMS', filteredMediaItems);
   }, [
-    searchBoxInputValue,
-    checkedGenreState,
-    checkedYearState,
-    checkedFormatTypeState,
+    // mediaItems,
+    // filteredGenreItems,
+    // filteredYearItems,
+    // filteredFormatTypeItems,
+    // checkedFormatTypeState,
+    // checkedFormatTypeState,
+    mediaItems,
   ]);
-  // useEffect(() => {
-  //   // console.log(
-  //   //   '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredGenreItems',
-  //   //   filteredGenreItems
-  //   // );
-  //   // console.log(
-  //   //   '🚀 ~ file: MediaLibrary.jsx ~ line 68 ~ MediaLibrary ~ filteredYearItems',
-  //   //   filteredYearItems
-  //   // );
-  //   // console.log(
-  //   //   '🚀🚀🚀🚀🚀🚀 ~ filteredFormatTypeItems',
-  //   //   filteredFormatTypeItems
-  //   // );
-  //   // console.log('🚀🚀🚀🚀🚀🚀 ~ MEDIAITEMS', mediaItems);
-  //   console.log('🚀🚀🚀🚀🚀🚀 ~ FILTEREDMEDIAITEMS', filteredMediaItems);
-  //   setFilteredMediaItems(mediaItems);
-  //   console.log('🚀🚀🚀🚀🚀🚀 ~ FILTEREDMEDIAITEMS', filteredMediaItems);
-  // }, [
-  //   // mediaItems,
-  //   // filteredGenreItems,
-  //   // filteredYearItems,
-  //   // filteredFormatTypeItems,
-  //   // checkedFormatTypeState,
-  //   // checkedFormatTypeState,
-  //   mediaItems,
-  // ]);
 
   // TODO: change name of checkedStateValue parameter
   const handleCheckedGenreStateOnChange = (checkedStateValue) => {
@@ -192,57 +301,55 @@ function MediaLibrary() {
     setSearchBoxInputValue(event.target.value);
   };
 
-  let displayData = [];
-  let isGenreFilterActive = filteredGenreItems.length > 0;
+  // let displayData = [];
+  // let isGenreFilterActive = filteredGenreItems.length > 0;
 
-  const applyGenreFilterActive = () => {
-    if (filteredGenreItems.length > 0) {
-      mediaItems.forEach((item, index) => {
-        for (let i = 0; i < item.genre.length; i++) {
-          for (let j = 0; j < filteredGenreItems.length; j++) {
-            if (item.genre[i] === filteredGenreItems[j]) {
-              displayData.push(mediaItems[index]);
-            }
-          }
-        }
-      });
-    }
-  };
+  // const applyGenreFilterActive = () => {
+  //   if (filteredGenreItems.length > 0) {
+  //     mediaItems.forEach((item, index) => {
+  //       for (let i = 0; i < item.genre.length; i++) {
+  //         for (let j = 0; j < filteredGenreItems.length; j++) {
+  //           if (item.genre[i] === filteredGenreItems[j]) {
+  //             displayData.push(mediaItems[index]);
+  //           }
+  //         }
+  //       }
+  //     });
+  //   }
+  // };
 
-  let isYearFilterActive = filteredYearItems.length > 0;
-  const applyYearFilter = () => {
-    if (filteredYearItems.length > 0) {
-      displayData = mediaItems.filter((item) =>
-        filteredYearItems.includes(item.year)
-      );
-    }
-  };
+  // let isYearFilterActive = filteredYearItems.length > 0;
+  // const applyYearFilter = () => {
+  //   if (filteredYearItems.length > 0) {
+  //     displayData = mediaItems.filter((item) =>
+  //       filteredYearItems.includes(item.year)
+  //     );
+  //   }
+  // };
 
-  let isRadioFilterActive = checkedFormatTypeState.some(
-    (item) => item.isChecked === true
-  );
-  const applyRadioFilter = () => {
-    if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
-      let formatTypeToDisplay = checkedFormatTypeState.filter((item) => {
-        return item.isChecked === true;
-      });
-      displayData = mediaItems.filter((item) => {
-        return formatTypeToDisplay[0].value.includes(item.type);
-      });
-    }
-  };
+  // let isRadioFilterActive = checkedFormatTypeState.some(
+  //   (item) => item.isChecked === true
+  // );
+  // const applyRadioFilter = () => {
+  //   if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
+  //     let formatTypeToDisplay = checkedFormatTypeState.filter((item) => {
+  //       return item.isChecked === true;
+  //     });
+  //     displayData = mediaItems.filter((item) => {
+  //       return formatTypeToDisplay[0].value.includes(item.type);
+  //     });
+  //   }
+  // };
 
-  let isTextFilterActive = searchBoxInputValue.length > 0;
-  const applyTextFilter = () => {
-    if (searchBoxInputValue.length > 0) {
-      displayData = mediaItems.filter((item) => {
-        const lowerCaseInputValue = searchBoxInputValue.toLowerCase();
-        return item.title.toLowerCase().includes(lowerCaseInputValue);
-      });
-    }
-  };
-
-  console.log('FILTEREDMEDIAITEMS -> '.filteredMediaItems);
+  // let isTextFilterActive = searchBoxInputValue.length > 0;
+  // const applyTextFilter = () => {
+  //   if (searchBoxInputValue.length > 0) {
+  //     displayData = mediaItems.filter((item) => {
+  //       const lowerCaseInputValue = searchBoxInputValue.toLowerCase();
+  //       return item.title.toLowerCase().includes(lowerCaseInputValue);
+  //     });
+  //   }
+  // };
 
   const handleClearFilter = () => {
     console.log('Clear Filters');
@@ -253,48 +360,48 @@ function MediaLibrary() {
   };
 
   //  TODO: prioritise the filters. Create a piece of filter state amd use that as a source of truth
-  if (isGenreFilterActive) {
-    applyGenreFilterActive();
-    displayData = [...new Set(displayData)];
-  }
-  if (isYearFilterActive) {
-    applyYearFilter();
-    displayData = [...new Set(displayData)];
-  }
-  if (isRadioFilterActive) {
-    applyRadioFilter();
-    displayData = [...new Set(displayData)];
-  }
-  if (isTextFilterActive) {
-    applyTextFilter();
-    displayData = [...new Set(displayData)];
-  }
+  // if (isGenreFilterActive) {
+  //   applyGenreFilterActive();
+  //   displayData = [...new Set(displayData)];
+  // }
+  // if (isYearFilterActive) {
+  //   applyYearFilter();
+  //   displayData = [...new Set(displayData)];
+  // }
+  // if (isRadioFilterActive) {
+  //   applyRadioFilter();
+  //   displayData = [...new Set(displayData)];
+  // }
+  // if (isTextFilterActive) {
+  //   applyTextFilter();
+  //   displayData = [...new Set(displayData)];
+  // }
 
-  if (
-    !isGenreFilterActive &&
-    !isYearFilterActive &&
-    !isRadioFilterActive &&
-    !isTextFilterActive
-  ) {
-    displayData = mediaItems.slice(0);
-  }
+  // if (
+  //   !isGenreFilterActive &&
+  //   !isYearFilterActive &&
+  //   !isRadioFilterActive &&
+  //   !isTextFilterActive
+  // ) {
+  // let displayData = mediaItems.slice(0);
+  // }
 
-  displayData.sort((a, b) => {
-    const titleA = a.title.toUpperCase();
-    const titleB = b.title.toUpperCase();
-    if (titleA < titleB) {
-      return -1;
-    }
-    if (titleA > titleB) {
-      return 1;
-    }
-    return 0;
-  });
+  // displayData.sort((a, b) => {
+  //   const titleA = a.title.toUpperCase();
+  //   const titleB = b.title.toUpperCase();
+  //   if (titleA < titleB) {
+  //     return -1;
+  //   }
+  //   if (titleA > titleB) {
+  //     return 1;
+  //   }
+  //   return 0;
+  // });
 
   let messageComponent;
 
   if (mediaItems.length > 0 && filteredMediaItems.length > 0) {
-    messageComponent = displayData.map((item, index) => {
+    messageComponent = filteredMediaItems.map((item, index) => {
       return (
         <MediaItem
           key={index}
