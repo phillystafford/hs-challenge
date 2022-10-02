@@ -199,29 +199,31 @@ function MediaLibrary() {
 
   useEffect(() => {
     console.log('🚀 IN 0');
-    let updatedFilteredMediaItems = filteredMediaItems;
-
-    // if (filteredGenreItems.length > 0) {
-    console.log('🚀 IN IF 1');
-    mediaItems.forEach((item, index) => {
-      for (let i = 0; i < item.genre.length; i++) {
-        for (let j = 0; j < filteredGenreItems.length; j++) {
-          if (item.genre[i] === filteredGenreItems[j]) {
-            updatedFilteredMediaItems.push(mediaItems[index]);
+    let updatedFilteredMediaItems = mediaItems.slice(0);
+    debugger;
+    if (filteredGenreItems.length > 0) {
+      console.log('🚀 IN IF 1');
+      let tempListMatchingGenres = [];
+      mediaItems.forEach((item, index) => {
+        for (let i = 0; i < item.genre.length; i++) {
+          for (let j = 0; j < filteredGenreItems.length; j++) {
+            if (item.genre[i] === filteredGenreItems[j]) {
+              tempListMatchingGenres.push(mediaItems[index]);
+            }
           }
         }
-      }
-    });
-    // }
-
-    // if (filteredYearItems.length > 0) {
-    console.log('🚀 IN IF 2');
-    updatedFilteredMediaItems = mediaItems.filter((item) =>
-      filteredYearItems.includes(item.year)
-    );
-    // }
-
-    if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
+      });
+      updatedFilteredMediaItems = [...new Set(tempListMatchingGenres)];
+      console.log(
+        '🚀 ~ file: MediaLibrary.jsx ~ line 217 ~ useEffect ~ updatedFilteredMediaItems',
+        updatedFilteredMediaItems
+      );
+    } else if (filteredYearItems.length > 0) {
+      console.log('🚀 IN IF 2');
+      updatedFilteredMediaItems = filteredMediaItems.filter((item) =>
+        filteredYearItems.includes(item.year)
+      );
+    } else if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
       console.log('🚀 IN IF 3');
       let formatTypeToDisplay = checkedFormatTypeState.filter((item) => {
         return item.isChecked === true;
@@ -229,15 +231,16 @@ function MediaLibrary() {
       updatedFilteredMediaItems = mediaItems.filter((item) => {
         return formatTypeToDisplay[0].value.includes(item.type);
       });
+    } else if (searchBoxInputValue.length > 0) {
+      console.log('🚀 IN IF 4');
+      let tempListMatchingGenres = [];
+      updatedFilteredMediaItems = mediaItems.filter((item) => {
+        const lowerCaseInputValue = searchBoxInputValue.toLowerCase();
+        return item.title.toLowerCase().includes(lowerCaseInputValue);
+      });
+    } else {
+      updatedFilteredMediaItems = mediaItems.slice(0);
     }
-
-    // if (searchBoxInputValue.length > 0) {
-    console.log('🚀 IN IF 4');
-    updatedFilteredMediaItems = mediaItems.filter((item) => {
-      const lowerCaseInputValue = searchBoxInputValue.toLowerCase();
-      return item.title.toLowerCase().includes(lowerCaseInputValue);
-    });
-    // }
 
     setFilteredMediaItems(
       updatedFilteredMediaItems.sort((a, b) => {
@@ -252,14 +255,14 @@ function MediaLibrary() {
         return 0;
       })
     );
-
+    debugger;
     console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
     console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems);
   }, [
     searchBoxInputValue,
-    checkedGenreState,
-    checkedYearState,
-    checkedFormatTypeState,
+    filteredGenreItems,
+    filteredYearItems,
+    filteredFormatTypeItems,
   ]);
 
   // useEffect(() => {
