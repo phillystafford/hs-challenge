@@ -108,67 +108,118 @@ function MediaLibrary() {
     setFilteredFormatTypeItems(filteredFormatTypeState);
   }, [checkedFormatTypeState]);
 
+  // useEffect(() => {
+  //   let updatedFilteredMediaItems = filteredMediaItems;
+
+  //   if (filteredGenreItems.length > 0) {
+  //     console.log('🚀 IN IF 1');
+  //     mediaItems.forEach((item, index) => {
+  //       for (let i = 0; i < item.genre.length; i++) {
+  //         for (let j = 0; j < filteredGenreItems.length; j++) {
+  //           if (item.genre[i] === filteredGenreItems[j]) {
+  //             updatedFilteredMediaItems.push(mediaItems[index]);
+  //           }
+  //         }
+  //       }
+  //     });
+  //   }
+
+  //   setFilteredMediaItems(
+  //     updatedFilteredMediaItems.sort((a, b) => {
+  //       const titleA = a.title.toUpperCase();
+  //       const titleB = b.title.toUpperCase();
+  //       if (titleA < titleB) {
+  //         return -1;
+  //       }
+  //       if (titleA > titleB) {
+  //         return 1;
+  //       }
+  //       return 0;
+  //     })
+  //   );
+  //   console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
+  // }, [checkedGenreState]);
+
+  // useEffect(() => {
+  //   let updatedFilteredMediaItems = filteredMediaItems;
+
+  //   if (filteredYearItems.length > 0) {
+  //     console.log('🚀 IN IF 2');
+  //     updatedFilteredMediaItems = mediaItems.filter((item) =>
+  //       filteredYearItems.includes(item.year)
+  //     );
+  //   }
+
+  //   setFilteredMediaItems(
+  //     updatedFilteredMediaItems.sort((a, b) => {
+  //       const titleA = a.title.toUpperCase();
+  //       const titleB = b.title.toUpperCase();
+  //       if (titleA < titleB) {
+  //         return -1;
+  //       }
+  //       if (titleA > titleB) {
+  //         return 1;
+  //       }
+  //       return 0;
+  //     })
+  //   );
+
+  //   console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
+  // }, [checkedYearState]);
+
+  // useEffect(() => {
+  //   let updatedFilteredMediaItems = filteredMediaItems;
+
+  //   if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
+  //     console.log('🚀 IN IF 3');
+  //     let formatTypeToDisplay = checkedFormatTypeState.filter((item) => {
+  //       return item.isChecked === true;
+  //     });
+  //     updatedFilteredMediaItems = mediaItems.filter((item) => {
+  //       return formatTypeToDisplay[0].value.includes(item.type);
+  //     });
+  //   }
+
+  //   setFilteredMediaItems(
+  //     updatedFilteredMediaItems.sort((a, b) => {
+  //       const titleA = a.title.toUpperCase();
+  //       const titleB = b.title.toUpperCase();
+  //       if (titleA < titleB) {
+  //         return -1;
+  //       }
+  //       if (titleA > titleB) {
+  //         return 1;
+  //       }
+  //       return 0;
+  //     })
+  //   );
+
+  //   console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
+  // }, [checkedFormatTypeState]);
+
   useEffect(() => {
+    console.log('🚀 IN 0');
     let updatedFilteredMediaItems = filteredMediaItems;
 
-    if (filteredGenreItems.length > 0) {
-      console.log('🚀 IN IF 1');
-      mediaItems.forEach((item, index) => {
-        for (let i = 0; i < item.genre.length; i++) {
-          for (let j = 0; j < filteredGenreItems.length; j++) {
-            if (item.genre[i] === filteredGenreItems[j]) {
-              updatedFilteredMediaItems.push(mediaItems[index]);
-            }
+    // if (filteredGenreItems.length > 0) {
+    console.log('🚀 IN IF 1');
+    mediaItems.forEach((item, index) => {
+      for (let i = 0; i < item.genre.length; i++) {
+        for (let j = 0; j < filteredGenreItems.length; j++) {
+          if (item.genre[i] === filteredGenreItems[j]) {
+            updatedFilteredMediaItems.push(mediaItems[index]);
           }
         }
-      });
-    }
+      }
+    });
+    // }
 
-    setFilteredMediaItems(
-      updatedFilteredMediaItems.sort((a, b) => {
-        const titleA = a.title.toUpperCase();
-        const titleB = b.title.toUpperCase();
-        if (titleA < titleB) {
-          return -1;
-        }
-        if (titleA > titleB) {
-          return 1;
-        }
-        return 0;
-      })
+    // if (filteredYearItems.length > 0) {
+    console.log('🚀 IN IF 2');
+    updatedFilteredMediaItems = mediaItems.filter((item) =>
+      filteredYearItems.includes(item.year)
     );
-    console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
-  }, [checkedGenreState]);
-
-  useEffect(() => {
-    let updatedFilteredMediaItems = filteredMediaItems;
-
-    if (filteredYearItems.length > 0) {
-      console.log('🚀 IN IF 2');
-      updatedFilteredMediaItems = mediaItems.filter((item) =>
-        filteredYearItems.includes(item.year)
-      );
-    }
-
-    setFilteredMediaItems(
-      updatedFilteredMediaItems.sort((a, b) => {
-        const titleA = a.title.toUpperCase();
-        const titleB = b.title.toUpperCase();
-        if (titleA < titleB) {
-          return -1;
-        }
-        if (titleA > titleB) {
-          return 1;
-        }
-        return 0;
-      })
-    );
-
-    console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
-  }, [checkedYearState]);
-
-  useEffect(() => {
-    let updatedFilteredMediaItems = filteredMediaItems;
+    // }
 
     if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
       console.log('🚀 IN IF 3');
@@ -180,33 +231,13 @@ function MediaLibrary() {
       });
     }
 
-    setFilteredMediaItems(
-      updatedFilteredMediaItems.sort((a, b) => {
-        const titleA = a.title.toUpperCase();
-        const titleB = b.title.toUpperCase();
-        if (titleA < titleB) {
-          return -1;
-        }
-        if (titleA > titleB) {
-          return 1;
-        }
-        return 0;
-      })
-    );
-
-    console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
-  }, [checkedFormatTypeState]);
-
-  useEffect(() => {
-    let updatedFilteredMediaItems = filteredMediaItems;
-
-    if (searchBoxInputValue.length > 0) {
-      console.log('🚀 IN IF 4');
-      updatedFilteredMediaItems = mediaItems.filter((item) => {
-        const lowerCaseInputValue = searchBoxInputValue.toLowerCase();
-        return item.title.toLowerCase().includes(lowerCaseInputValue);
-      });
-    }
+    // if (searchBoxInputValue.length > 0) {
+    console.log('🚀 IN IF 4');
+    updatedFilteredMediaItems = mediaItems.filter((item) => {
+      const lowerCaseInputValue = searchBoxInputValue.toLowerCase();
+      return item.title.toLowerCase().includes(lowerCaseInputValue);
+    });
+    // }
 
     setFilteredMediaItems(
       updatedFilteredMediaItems.sort((a, b) => {
@@ -223,7 +254,41 @@ function MediaLibrary() {
     );
 
     console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
-  }, [searchBoxInputValue]);
+    console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems);
+  }, [
+    searchBoxInputValue,
+    checkedGenreState,
+    checkedYearState,
+    checkedFormatTypeState,
+  ]);
+
+  // useEffect(() => {
+  //   let updatedFilteredMediaItems = filteredMediaItems;
+
+  //   if (searchBoxInputValue.length > 0) {
+  //     console.log('🚀 IN IF 4');
+  //     updatedFilteredMediaItems = mediaItems.filter((item) => {
+  //       const lowerCaseInputValue = searchBoxInputValue.toLowerCase();
+  //       return item.title.toLowerCase().includes(lowerCaseInputValue);
+  //     });
+  //   }
+
+  //   setFilteredMediaItems(
+  //     updatedFilteredMediaItems.sort((a, b) => {
+  //       const titleA = a.title.toUpperCase();
+  //       const titleB = b.title.toUpperCase();
+  //       if (titleA < titleB) {
+  //         return -1;
+  //       }
+  //       if (titleA > titleB) {
+  //         return 1;
+  //       }
+  //       return 0;
+  //     })
+  //   );
+
+  //   console.log('🚀 RUNNING FILTEREDMEDIAITEMS', filteredMediaItems.length);
+  // }, [searchBoxInputValue]);
 
   useEffect(() => {
     // console.log(
@@ -399,6 +464,10 @@ function MediaLibrary() {
   // });
 
   let messageComponent;
+  console.log(
+    '🚀🚀🚀🚀🚀🚀 AT RENDER filteredMediaItems.length',
+    filteredMediaItems.length
+  );
 
   if (mediaItems.length > 0 && filteredMediaItems.length > 0) {
     messageComponent = filteredMediaItems.map((item, index) => {
