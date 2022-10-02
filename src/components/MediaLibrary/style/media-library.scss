@@ -36,6 +36,21 @@
   margin: 0 30px 30px;
 }
 
+.error-message {
+  animation: color-change 1s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: red;
+  }
+  50% {
+    color: blue;
+  }
+  100% {
+    color: red;
+  }
+}
 // TODO: come back and do this https://css-tricks.com/zooming-images-in-a-grid-layout/
 // TODO: screen quality was so bad that I had to look at an angle to spot styling differences
 // TODO: explain mixins and variables

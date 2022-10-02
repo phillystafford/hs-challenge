@@ -283,9 +283,42 @@ function MediaLibrary() {
     return 0;
   });
 
+  let messageComponent;
+
+  if (mediaItems.length > 0 && filteredMediaItems.length > 0) {
+    messageComponent = displayData.map((item, index) => {
+      return (
+        <MediaItem
+          key={index}
+          title={item.title}
+          year={item.year}
+          poster={item.poster}
+          genre={item.genre}
+          type={item.type}
+        />
+      );
+    });
+  } else if (mediaItems.length > 0 && filteredMediaItems.length === 0) {
+    messageComponent = (
+      <div className="error-message">
+        Nothing meets your criteria. Please remove some filters
+      </div>
+    );
+  } else if (mediaItems.length === 0) {
+    messageComponent = (
+      <div className="error-message">
+        Ooops :( Check your internet connection. There&#39;s a problem loading
+        the media library
+      </div>
+    );
+  } else {
+    messageComponent = (
+      <div className="error-message">Something really weird happened</div>
+    );
+  }
+
   return (
     <div className="exercise-2__container">
-      {/* <div className="filters-container"> */}
       <div className="filter__container">
         <div className="top-filter__container">
           <div className="dropdown-filter__container">
@@ -327,29 +360,7 @@ function MediaLibrary() {
           />
         </div>
       </div>
-      {/* </div> */}
-      <div className="media-view__container">
-        {/* TODO: make this a double check for network error and no search results for filter combination */}
-        {/* {mediaItems && displayData && displayData.length > 0 ? ( */}
-        {mediaItems && displayData && displayData.length > 0 ? (
-          displayData.map((item, index) => {
-            return (
-              <MediaItem
-                key={index}
-                title={item.title}
-                year={item.year}
-                poster={item.poster}
-                genre={item.genre}
-                type={item.type}
-              />
-            );
-          })
-        ) : (
-          <div>
-            Ooops :( there seems to be a problem loading the media library
-          </div>
-        )}
-      </div>
+      <div className="media-view__container">{messageComponent}</div>
     </div>
   );
 }
