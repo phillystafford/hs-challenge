@@ -164,7 +164,6 @@ function MediaLibrary() {
       '🚀 ~ file: MediaLibrary.jsx ~ line 158 ~ formatType',
       formatType
     );
-    // debugger;
     let updatedCheckedFormatTypeState;
 
     if (formatType === 'movies') {
@@ -180,169 +179,100 @@ function MediaLibrary() {
     }
 
     setCheckedFormatTypeState(updatedCheckedFormatTypeState);
-
-    // const updatedCheckedFormatTypeState = checkedFormatTypeState.map((item) => {
-    //   debugger;
-    //   return { isChecked: !item.isChecked, value: item.value };
-    // });
-    // const updatedCheckedFormatTypeState = {
-    //   isChecked: !checkedFormatTypeState.isChecked,
-    //   value: checkedFormatTypeState.value,
-    // };
   };
 
   const handleOnChange = (event) => {
     setInputValue(event.target.value);
   };
 
-  // const handleCheckedYearStateOnChange = (position) => {
-  //   const updatedCheckedYearState = checkedYearState.map((item, index) =>
-  //     index === position ? !item : item
-  //   );
+  let displayData = [];
+  let isGenreFilterActive = filteredGenreItems.length > 0;
 
-  //   setCheckedYearState(updatedCheckedYearState);
-  // };
-
-  let renderThisData = [];
-
-  // const isGenreFilterActive = () => {
-  //   debugger;
-  //   console.log('filteredGenreItems', filteredGenreItems);
-  //   if (filteredGenreItems.length > 0) {
-  //     mediaItems.forEach((item, index) => {
-  //       console.log('item -> ', item, ' - > index -> ', index);
-
-  //       if (index % 2 === 0) {
-  //         renderThisData.push(mediaItems[index]);
-  //       }
-  //     });
-
-  //     // renderThisData = mediaItems.filter((item) => {
-  //     //   return item.genre.filter((item) => {
-  //     //     return filteredGenreItems.includes(item);
-  //     //   });
-  //     // });
-  //   } else {
-  //     console.log(
-  //       '🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀'
-  //     );
-  //     // renderThisData = mediaItems.slice();
-  //   }
-  // };
-  const isGenreFilterActive = () => {
-    console.log('filteredGenreItems', filteredGenreItems);
+  const applyGenreFilterActive = () => {
     if (filteredGenreItems.length > 0) {
       mediaItems.forEach((item, index) => {
         for (let i = 0; i < item.genre.length; i++) {
           for (let j = 0; j < filteredGenreItems.length; j++) {
             if (item.genre[i] === filteredGenreItems[j]) {
-              renderThisData.push(mediaItems[index]);
+              displayData.push(mediaItems[index]);
             }
           }
         }
       });
-    } else {
-      renderThisData = mediaItems.slice(0);
     }
   };
 
-  console.log('renderThisData -> ', renderThisData);
-
-  const isYearFilterActive = () => {
-    // console.log('filteredGenreItems.length > 0', filteredYearItems.length > 0);
+  let isYearFilterActive = filteredYearItems.length > 0;
+  const applyYearFilter = () => {
     if (filteredYearItems.length > 0) {
-      renderThisData = mediaItems.filter((item) =>
+      displayData = mediaItems.filter((item) =>
         filteredYearItems.includes(item.year)
       );
-    } else {
-      renderThisData = mediaItems.slice();
     }
   };
 
-  let radioFilterData;
-
-  const isRadioFilterActive = () => {
+  let isRadioFilterActive = checkedFormatTypeState.some(
+    (item) => item.isChecked === true
+  );
+  const applyRadioFilter = () => {
     if (checkedFormatTypeState.some((item) => item.isChecked === true)) {
-      // console.log('IN IF');
-      // console.log('IN IF - mediaItems.length ->', mediaItems.length);
-      // console.log('IN IF - checkedFormatTypeState ->', checkedFormatTypeState);
-      // debugger;
       let formatTypeToDisplay = checkedFormatTypeState.filter((item) => {
-        // console.log(
-        //   '🚀 ~ file: MediaLibrary.jsx ~ line 231 ~ formatTypeToDisplay ~ item',
-        //   item
-        // );
-        // console.log('🚀 ~ item.isChecked === true', item.isChecked === true);
         return item.isChecked === true;
       });
-
-      // trim the plural s from movies or books
-      // formatTypeToDisplay[0].value = formatTypeToDisplay[0].value.slice(0, -1);
-
-      // console.log('IN IF - formatTypeToDisplay ->', formatTypeToDisplay);
-      // console.log(
-      //   'IN IF - formatTypeToDisplay.value ->',
-      //   formatTypeToDisplay[0].value
-      // );
-      // debugger;
-      renderThisData = mediaItems.filter((item) => {
-        // console.log('🚀 ~ item', item.type);
-        // console.log(
-        //   '🚀 ~ formatTypeToDisplay[0].value === item.type',
-        //   formatTypeToDisplay[0].value === item.type
-        // );
-        // console.log(
-        //   '🚀 ~ formatTypeToDisplay.value',
-        //   formatTypeToDisplay[0].value
-        // );
-
-        // filteredYearItems.includes(item.year);
+      displayData = mediaItems.filter((item) => {
         return formatTypeToDisplay[0].value.includes(item.type);
-        // return formatTypeToDisplay[0].value === item.type;
       });
-
-      console.log('IN IF - RENDERTHISDATA ->', renderThisData);
     }
   };
 
-  const isTextFilterActive = () => {
-    // console.log('🚀 renderThisData', renderThisData);
+  let isTextFilterActive = inputValue.length > 0;
+  const applyTextFilter = () => {
     if (inputValue.length > 0) {
-      renderThisData = mediaItems.filter((item) => {
-        console.log('🚀 inputValue', inputValue);
-        console.log('🚀 inputValue', item.title);
-
-        console.log(
-          '🚀 ~ inputValue.includes(item.title)',
-          inputValue.includes(item.title)
-        );
+      displayData = mediaItems.filter((item) => {
         const lowerCaseInputValue = inputValue.toLowerCase();
         return item.title.toLowerCase().includes(lowerCaseInputValue);
       });
     }
   };
-  // console.log('🚀 Hitting? isTextFilterActive', isTextFilterActive);
 
-  isGenreFilterActive();
-  // isYearFilterActive();
-  // debugger;
-  // isRadioFilterActive();
-  // isTextFilterActive();
+  //  TODO: prioritise the filters. Create a piece of filter state amd use that as a source of truth
+  if (isGenreFilterActive) {
+    applyGenreFilterActive();
+    displayData = [...new Set(displayData)];
+  }
+  if (isYearFilterActive) {
+    applyYearFilter();
+    displayData = [...new Set(displayData)];
+  }
+  if (isRadioFilterActive) {
+    applyRadioFilter();
+    displayData = [...new Set(displayData)];
+  }
+  if (isTextFilterActive) {
+    applyTextFilter();
+    displayData = [...new Set(displayData)];
+  }
 
-  // const array1 = [1, 2, 2, 3, 3, 3, 1, 4];
-  // const uniq = [...new Set([1, 2, 2, 3, 3, 3, 1, 4, 0])];
-  // console.log('uniq -> ', uniq);
+  if (
+    !isGenreFilterActive &&
+    !isYearFilterActive &&
+    !isRadioFilterActive &&
+    !isTextFilterActive
+  ) {
+    displayData = mediaItems.slice(0);
+  }
 
-  // console.log('🚀 CHECKEDGENRESTATE ->', checkedGenreState);
-  // console.log('🚀 FILTEREDGENREITEMS ->', filteredGenreItems);
-
-  // console.log('🚀 CHECKEDYEARSTATE ->', checkedYearState);
-  // console.log('🚀 CHECKEDFORMATTYPESTATE ->', checkedFormatTypeState);
-  // console.log('🚀 CHECKEDFORMATTYPESTATE ->', checkedFormatTypeState);
-  // console.log('🚀 RENDERTHISDATA ->', renderThisData);
-  // console.log('🚀 RADIOFILTERDATA ->', radioFilterData);
-
-  renderThisData = [...new Set(renderThisData)];
+  displayData.sort((a, b) => {
+    const titleA = a.title.toUpperCase();
+    const titleB = b.title.toUpperCase();
+    if (titleA < titleB) {
+      return -1;
+    }
+    if (titleA > titleB) {
+      return 1;
+    }
+    return 0;
+  });
 
   return (
     <div>
@@ -377,30 +307,26 @@ function MediaLibrary() {
           <button>Clear Filters Link</button>
         </div>
       </div>
-      {true && (
-        <div className="media-item-container">
-          {/* <pre>{renderThisData}</pre> */}
-          {/* <pre>renderThisData -> {JSON.stringify(renderThisData)}</pre> */}
-          {renderThisData && renderThisData.length > 0 ? (
-            renderThisData.map((item, index) => {
-              return (
-                <MediaItem
-                  key={index}
-                  title={item.title}
-                  year={item.year}
-                  poster={item.poster}
-                  genre={item.genre}
-                  type={item.type}
-                />
-              );
-            })
-          ) : (
-            <div>
-              Ooops :( there seems to be a problem loading the media library
-            </div>
-          )}
-        </div>
-      )}
+      <div className="media-item-container">
+        {displayData && displayData.length > 0 ? (
+          displayData.map((item, index) => {
+            return (
+              <MediaItem
+                key={index}
+                title={item.title}
+                year={item.year}
+                poster={item.poster}
+                genre={item.genre}
+                type={item.type}
+              />
+            );
+          })
+        ) : (
+          <div>
+            Ooops :( there seems to be a problem loading the media library
+          </div>
+        )}
+      </div>
     </div>
   );
 }
