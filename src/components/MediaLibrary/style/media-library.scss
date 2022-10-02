@@ -11,6 +11,7 @@
 .top-filter__container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .dropdown-filter__container {
@@ -22,6 +23,8 @@
 .bottom-filter__container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .media-view__container {

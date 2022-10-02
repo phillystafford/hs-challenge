@@ -1,24 +1,41 @@
-.filter-list__item {
+.filter-list__item--checkbox {
   padding: 10;
   border-top: 1px solid v.$media-viewer-border-colour;
   border-bottom: 1px solid v.$media-viewer-border-colour;
   width: 140px;
 }
 
-.filter-list__item:first-child {
+.filter-list__item--checkbox:first-child {
   border-top: none;
 }
 
-.filter-list__item:last-child {
+.filter-list__item--checkbox:last-child {
   border-bottom: none;
 }
 
-.filter-list__label {
+.filter-list__label--checkbox {
   padding-left: 20px;
   font-weight: bold;
   color: v.$filter-text-colour;
+  text-transform: uppercase;
 }
 
+.filter-list__item--radio {
+  width: 80px;
+  display: flex;
+}
+
+.filter-list__item--radio:last-child {
+  // margin-left: 20px;
+}
+
+.filter-list__label--radio {
+  font-size: 12px;
+  padding-left: 5px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: v.$filter-text-colour;
+}
 // TODO: checkbox styling attempt. Come back to this
 // TODO: and pointy triangle
 
@@ -27,62 +44,60 @@
 //   filter: hue-rotate(18deg) brightness(1.7);
 // }
 
-.css-checkbox {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-}
-#inputPreview {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-.css-checkbox + label {
-  position: relative;
-  font-size: 14px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  height: 27px;
-  color: rgb(0, 0, 0);
-}
-.css-checkbox + label::before {
-  content: ' ';
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 3px;
-  width: 25px;
-  height: 25px;
-  background-color: rgb(237, 231, 216);
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(222, 209, 178);
-  border-radius: 2px;
-  box-shadow: none;
-}
-.css-checkbox:checked + label::after {
-  content: ' ';
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMzMzMjMwIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+');
-  background-repeat: no-repeat;
-  background-size: 15px 15px;
-  background-position: center center;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 0px;
-  left: 0px;
-  top: 0px;
-  text-align: center;
-  background-color: transparent;
-  font-size: 10px;
-  height: 27px;
-  width: 27px;
-}
-
-// TODO: I stopped just as I was starting the checkbox styling
+// .css-checkbox {
+//   position: absolute;
+//   overflow: hidden;
+//   clip: rect(0 0 0 0);
+//   height: 1px;
+//   width: 1px;
+//   margin: -1px;
+//   padding: 0;
+//   border: 0;
+// }
+// #inputPreview {
+//   display: flex;
+//   gap: 20px;
+//   justify-content: center;
+// }
+// .css-checkbox + label {
+//   position: relative;
+//   font-size: 14px;
+//   cursor: pointer;
+//   display: inline-flex;
+//   align-items: center;
+//   height: 27px;
+//   color: rgb(0, 0, 0);
+// }
+// .css-checkbox + label::before {
+//   content: ' ';
+//   display: inline-block;
+//   vertical-align: middle;
+//   margin-right: 3px;
+//   width: 25px;
+//   height: 25px;
+//   background-color: rgb(237, 231, 216);
+//   border-width: 1px;
+//   border-style: solid;
+//   border-color: rgb(222, 209, 178);
+//   border-radius: 2px;
+//   box-shadow: none;
+// }
+// .css-checkbox:checked + label::after {
+//   content: ' ';
+//   background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMzMzMjMwIiBkPSJNMTczLjg5OCA0MzkuNDA0bC0xNjYuNC0xNjYuNGMtOS45OTctOS45OTctOS45OTctMjYuMjA2IDAtMzYuMjA0bDM2LjIwMy0zNi4yMDRjOS45OTctOS45OTggMjYuMjA3LTkuOTk4IDM2LjIwNCAwTDE5MiAzMTIuNjkgNDMyLjA5NSA3Mi41OTZjOS45OTctOS45OTcgMjYuMjA3LTkuOTk3IDM2LjIwNCAwbDM2LjIwMyAzNi4yMDRjOS45OTcgOS45OTcgOS45OTcgMjYuMjA2IDAgMzYuMjA0bC0yOTQuNCAyOTQuNDAxYy05Ljk5OCA5Ljk5Ny0yNi4yMDcgOS45OTctMzYuMjA0LS4wMDF6Ii8+PC9zdmc+');
+//   background-repeat: no-repeat;
+//   background-size: 15px 15px;
+//   background-position: center center;
+//   position: absolute;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   margin-left: 0px;
+//   left: 0px;
+//   top: 0px;
+//   text-align: center;
+//   background-color: transparent;
+//   font-size: 10px;
+//   height: 27px;
+//   width: 27px;
+// }

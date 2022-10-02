@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function FilterItem({ inputType, id, name, value, isChecked, onChange }) {
   return (
     <>
-      <li className="filter-list__item">
+      <li className={`filter-list__item--${inputType}`}>
         <input
           className="filter-list__input"
           type={inputType}
@@ -15,8 +15,8 @@ function FilterItem({ inputType, id, name, value, isChecked, onChange }) {
           checked={isChecked}
           onChange={onChange}
         />
-        <label className="filter-list__label" htmlFor={id}>
-          {name.toUpperCase()}
+        <label className={`filter-list__label--${inputType}`} htmlFor={id}>
+          {name}
         </label>
       </li>
       {/* <div id="inputPreview">

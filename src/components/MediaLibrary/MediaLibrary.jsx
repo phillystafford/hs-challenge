@@ -135,6 +135,8 @@ function MediaLibrary() {
   // TODO: change name of checkedStateValue parameter
   const handleCheckedGenreStateOnChange = (checkedStateValue) => {
     const updatedCheckedGenreState = checkedGenreState.map((item) => {
+      console.log('dropdown state checks');
+
       return checkedStateValue.value === item.value
         ? { isChecked: !item.isChecked, value: item.value }
         : { isChecked: item.isChecked, value: item.value };
@@ -308,7 +310,7 @@ function MediaLibrary() {
             handleOnChange={handleOnChange}
           />
         </div>
-        <div className="top-filter__container">
+        <div className="bottom-filter__container">
           <RadioFilter
             type="format-type"
             config={formatTypeList}
@@ -324,7 +326,7 @@ function MediaLibrary() {
       </div>
       {/* </div> */}
       <div className="media-view__container">
-        {/* make this a double check for network error and no search results for filter combination */}
+        {/* TODO: make this a double check for network error and no search results for filter combination */}
         {/* {mediaItems && displayData && displayData.length > 0 ? ( */}
         {mediaItems && displayData && displayData.length > 0 ? (
           displayData.map((item, index) => {
