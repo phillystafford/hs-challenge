@@ -1,0 +1,28 @@
+.filter-dropdown__button--genre,
+.filter-dropdown__button--year {
+  color: v.$filter-text-colour;
+  background-color: v.$filter-background-colour;
+  border-bottom: 3px solid v.$filter-border-colour;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  min-width: 80px;
+  width: 120px;
+
+  font-weight: bold;
+  line-height: 2;
+  text-align: left;
+  position: relative;
+  font-size: 14px;
+  @media (min-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+.filter-dropdown__button--year {
+  margin-left: 20px;
+}
+
+.fa-chevron-down {
+  color: v.$filter-text-colour;
+}

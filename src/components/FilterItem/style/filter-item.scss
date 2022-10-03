@@ -1,0 +1,86 @@
+.filter-list__item--checkbox--genre {
+  padding: 10;
+  border-top: 1px solid v.$media-viewer-border-colour;
+  border-bottom: 1px solid v.$media-viewer-border-colour;
+  width: 140px;
+  font-size: 14px;
+  @media (min-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  opacity: 0;
+}
+
+.filter-list__item--checkbox--genre:hover {
+  background-color: #f9f9f9;
+}
+
+.filter-list__item--checkbox--genre:first-child {
+  border-top: none;
+}
+
+.filter-list__item--checkbox--genre:last-child {
+  border-bottom: none;
+}
+
+.filter-list__item--checkbox--year {
+  padding: 10;
+  border-top: 1px solid v.$media-viewer-border-colour;
+  border-bottom: 1px solid v.$media-viewer-border-colour;
+  width: 100px;
+  font-size: 14px;
+  @media (min-width: 400px) {
+    width: 120px;
+  }
+  @media (min-width: 600px) {
+    font-size: 16px;
+  }
+}
+
+.filter-list__item--checkbox--year:hover {
+  background-color: #f9f9f9;
+}
+
+.filter-list__item--checkbox--year:first-child {
+  border-top: none;
+}
+
+.filter-list__item--checkbox--year:last-child {
+  border-bottom: none;
+}
+
+.filter-list__label--checkbox {
+  padding-left: 20px;
+  font-weight: bold;
+  color: v.$filter-text-colour;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.filter-list__item--radio {
+  width: 80px;
+  display: flex;
+}
+
+.filter-list__item--radio:last-child {
+  margin-top: 10px;
+  @media (min-width: 400px) {
+    margin-top: 0;
+  }
+}
+
+.filter-list__label--radio {
+  font-size: 12px;
+  padding-left: 16px;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: v.$filter-text-colour;
+}
+
+.fa-square,
+.fa-square-check {
+  color: v.$filter-text-colour;
+}

@@ -1,0 +1,49 @@
+.filter-list__container--genre {
+  position: absolute;
+  bottom: -276px;
+  left: -22px;
+  z-index: 20;
+
+  background-color: #ffffff;
+  border: v.$media-viewer-standard-border;
+
+  @media (min-width: 600px) {
+    bottom: -292px;
+  }
+}
+
+.filter-list__container--year {
+  position: absolute;
+  bottom: -276px;
+  left: 155px;
+
+  background-color: #ffffff;
+  border: v.$media-viewer-standard-border;
+
+  @media (min-width: 600px) {
+    bottom: -292px;
+  }
+}
+
+.filter-list__list--genre {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-list__list--year {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-list__list--format-type {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 400px) {
+    flex-direction: row;
+  }
+}

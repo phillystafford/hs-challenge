@@ -1,0 +1,111 @@
+.blurb {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #faf9f8;
+}
+
+.blurb__container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 60px;
+
+  @media (min-width: 640px) {
+    align-items: center;
+    flex-direction: row;
+  }
+  @media (min-width: 1024px) {
+    max-width: 1024px;
+    margin: 20px 20px;
+  }
+}
+
+.blurb__container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -22px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fd6d00;
+  border: 4px solid #fff;
+}
+
+.blurb__container::after {
+  content: '';
+  position: absolute;
+  bottom: 81px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fd6d00;
+
+  @media (min-width: 640px) {
+    bottom: -4px;
+  }
+}
+
+.blurb__info-container {
+  padding: 0 10px;
+  border-left: 2px solid #fd6d00;
+}
+
+.blurb__info-container::before {
+  content: '\275D';
+  position: relative;
+  top: 10px;
+  left: -20px;
+  color: #fff;
+  font-size: 30px;
+}
+
+.blurb__description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+  color: #606060;
+  margin: 0;
+  padding: 0 20px;
+  font-family: 'Roboto Slab', serif;
+
+  @media (min-width: 400px) {
+    font-size: 20px;
+  }
+}
+
+.blurb__author {
+  font-size: 14px;
+  font-weight: 600;
+  color: #545454;
+  margin-top: 35px;
+  display: block;
+  padding: 0 20px;
+}
+
+.blurb__cta {
+  color: #fff;
+  background-color: #00b0e8;
+  padding: 20px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  min-width: 164px;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  margin: 35px auto 0;
+  border-radius: 4px;
+
+  @media (min-width: 400px) {
+    font-size: 14px;
+  }
+  @media (min-width: 640px) {
+    margin: 0 0 0 10px;
+    padding: 24px 0;
+    height: 16px;
+    min-width: 200px;
+  }
+}
